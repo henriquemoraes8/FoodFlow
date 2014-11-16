@@ -32,6 +32,15 @@
 		5341ACEC1A13100700B48DF8 /* LineGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5341ACEB1A13100700B48DF8 /* LineGraphViewController.m */; };
 		5341ACEF1A13101500B48DF8 /* PieChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5341ACEE1A13101500B48DF8 /* PieChartViewController.m */; };
 		5341ACF11A13109B00B48DF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5341ACF01A13109B00B48DF8 /* Main.storyboard */; };
+		5341ACF31A131C4B00B48DF8 /* RPNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5341ACF21A131C4A00B48DF8 /* RPNetworking.framework */; };
+		5341ACF61A148BEE00B48DF8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5341ACF51A148BEE00B48DF8 /* LoginViewController.m */; };
+		5341ACF81A148C9700B48DF8 /* food-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 5341ACF71A148C9700B48DF8 /* food-50.png */; };
+		5341ACFA1A148D0700B48DF8 /* 7292_duke_blue_devils-partial-1978.png in Resources */ = {isa = PBXBuildFile; fileRef = 5341ACF91A148D0700B48DF8 /* 7292_duke_blue_devils-partial-1978.png */; };
+		5341ACFC1A148E6900B48DF8 /* facebook-connect.png in Resources */ = {isa = PBXBuildFile; fileRef = 5341ACFB1A148E6900B48DF8 /* facebook-connect.png */; };
+		5341ACFE1A148EF400B48DF8 /* checkConfirma.png in Resources */ = {isa = PBXBuildFile; fileRef = 5341ACFD1A148EF400B48DF8 /* checkConfirma.png */; };
+		5341AD001A14901000B48DF8 /* duke_univ_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 5341ACFF1A14901000B48DF8 /* duke_univ_blue.png */; };
+		5341AD041A1491AC00B48DF8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5341AD031A1491AC00B48DF8 /* ProfileViewController.m */; };
+		5341AD061A14945900B48DF8 /* close2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5341AD051A14945900B48DF8 /* close2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +89,17 @@
 		5341ACED1A13101500B48DF8 /* PieChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartViewController.h; sourceTree = "<group>"; };
 		5341ACEE1A13101500B48DF8 /* PieChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartViewController.m; sourceTree = "<group>"; };
 		5341ACF01A13109B00B48DF8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5341ACF21A131C4A00B48DF8 /* RPNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RPNetworking.framework; sourceTree = "<group>"; };
+		5341ACF41A148BEE00B48DF8 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		5341ACF51A148BEE00B48DF8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		5341ACF71A148C9700B48DF8 /* food-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "food-50.png"; sourceTree = "<group>"; };
+		5341ACF91A148D0700B48DF8 /* 7292_duke_blue_devils-partial-1978.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7292_duke_blue_devils-partial-1978.png"; sourceTree = "<group>"; };
+		5341ACFB1A148E6900B48DF8 /* facebook-connect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-connect.png"; sourceTree = "<group>"; };
+		5341ACFD1A148EF400B48DF8 /* checkConfirma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkConfirma.png; sourceTree = "<group>"; };
+		5341ACFF1A14901000B48DF8 /* duke_univ_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = duke_univ_blue.png; sourceTree = "<group>"; };
+		5341AD021A1491AC00B48DF8 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		5341AD031A1491AC00B48DF8 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		5341AD051A14945900B48DF8 /* close2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +109,7 @@
 			files = (
 				5341ACE91A130E9100B48DF8 /* libstdc++.6.0.9.dylib in Frameworks */,
 				5341ACE71A130E6C00B48DF8 /* CoreText.framework in Frameworks */,
+				5341ACF31A131C4B00B48DF8 /* RPNetworking.framework in Frameworks */,
 				5341ACE51A130E5A00B48DF8 /* ShinobiCharts.framework in Frameworks */,
 				5341ACA01A130D6E00B48DF8 /* CoreGraphics.framework in Frameworks */,
 				5341ACA21A130D6E00B48DF8 /* UIKit.framework in Frameworks */,
@@ -132,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				5341ACE81A130E9100B48DF8 /* libstdc++.6.0.9.dylib */,
+				5341ACF21A131C4A00B48DF8 /* RPNetworking.framework */,
 				5341ACE61A130E6C00B48DF8 /* CoreText.framework */,
 				5341ACE41A130E5A00B48DF8 /* ShinobiCharts.framework */,
 				5341AC9D1A130D6E00B48DF8 /* Foundation.framework */,
@@ -145,6 +167,7 @@
 		5341ACA31A130D6E00B48DF8 /* FoodFlow */ = {
 			isa = PBXGroup;
 			children = (
+				5341AD011A14919500B48DF8 /* Profile */,
 				5341ACE31A130E2800B48DF8 /* Graphs */,
 				5341ACDC1A130DBE00B48DF8 /* Images */,
 				5341ACD21A130D8900B48DF8 /* Food Point Advertisement */,
@@ -155,6 +178,8 @@
 				5341ACB31A130D6E00B48DF8 /* ViewController.m */,
 				5341ACB51A130D6E00B48DF8 /* Images.xcassets */,
 				5341ACA41A130D6E00B48DF8 /* Supporting Files */,
+				5341ACF41A148BEE00B48DF8 /* LoginViewController.h */,
+				5341ACF51A148BEE00B48DF8 /* LoginViewController.m */,
 			);
 			path = FoodFlow;
 			sourceTree = "<group>";
@@ -204,6 +229,12 @@
 		5341ACDC1A130DBE00B48DF8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				5341AD051A14945900B48DF8 /* close2.png */,
+				5341ACFF1A14901000B48DF8 /* duke_univ_blue.png */,
+				5341ACFD1A148EF400B48DF8 /* checkConfirma.png */,
+				5341ACFB1A148E6900B48DF8 /* facebook-connect.png */,
+				5341ACF91A148D0700B48DF8 /* 7292_duke_blue_devils-partial-1978.png */,
+				5341ACF71A148C9700B48DF8 /* food-50.png */,
 				5341ACDD1A130DCB00B48DF8 /* dataReferencia.png */,
 				5341ACDE1A130DCB00B48DF8 /* dataAgenda.png */,
 				5341ACDF1A130DCB00B48DF8 /* img-data-prazo.png */,
@@ -220,6 +251,15 @@
 				5341ACEE1A13101500B48DF8 /* PieChartViewController.m */,
 			);
 			name = Graphs;
+			sourceTree = "<group>";
+		};
+		5341AD011A14919500B48DF8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5341AD021A1491AC00B48DF8 /* ProfileViewController.h */,
+				5341AD031A1491AC00B48DF8 /* ProfileViewController.m */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,12 +338,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5341AD001A14901000B48DF8 /* duke_univ_blue.png in Resources */,
+				5341AD061A14945900B48DF8 /* close2.png in Resources */,
 				5341ACB61A130D6E00B48DF8 /* Images.xcassets in Resources */,
 				5341ACA81A130D6E00B48DF8 /* InfoPlist.strings in Resources */,
+				5341ACFA1A148D0700B48DF8 /* 7292_duke_blue_devils-partial-1978.png in Resources */,
+				5341ACFC1A148E6900B48DF8 /* facebook-connect.png in Resources */,
 				5341ACE11A130DCB00B48DF8 /* dataAgenda.png in Resources */,
+				5341ACF81A148C9700B48DF8 /* food-50.png in Resources */,
 				5341ACF11A13109B00B48DF8 /* Main.storyboard in Resources */,
 				5341ACE21A130DCB00B48DF8 /* img-data-prazo.png in Resources */,
 				5341ACE01A130DCB00B48DF8 /* dataReferencia.png in Resources */,
+				5341ACFE1A148EF400B48DF8 /* checkConfirma.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +372,9 @@
 				5341ACB41A130D6E00B48DF8 /* ViewController.m in Sources */,
 				5341ACEF1A13101500B48DF8 /* PieChartViewController.m in Sources */,
 				5341ACDB1A130DAB00B48DF8 /* FoodAdvertisementModel.m in Sources */,
+				5341AD041A1491AC00B48DF8 /* ProfileViewController.m in Sources */,
 				5341ACDA1A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.m in Sources */,
+				5341ACF61A148BEE00B48DF8 /* LoginViewController.m in Sources */,
 				5341ACD91A130DAB00B48DF8 /* FoodPointAdvertisementViewController.m in Sources */,
 				5341ACAE1A130D6E00B48DF8 /* AppDelegate.m in Sources */,
 				5341ACAA1A130D6E00B48DF8 /* main.m in Sources */,
