@@ -187,19 +187,19 @@
 		5341ACA31A130D6E00B48DF8 /* FoodFlow */ = {
 			isa = PBXGroup;
 			children = (
-				5341AD011A14919500B48DF8 /* Profile */,
-				5341ACE31A130E2800B48DF8 /* Graphs */,
-				5341ACDC1A130DBE00B48DF8 /* Images */,
-				5341ACD21A130D8900B48DF8 /* Food Point Advertisement */,
 				5341ACAC1A130D6E00B48DF8 /* AppDelegate.h */,
 				5341ACAD1A130D6E00B48DF8 /* AppDelegate.m */,
 				5341ACF01A13109B00B48DF8 /* Main.storyboard */,
 				5341ACB21A130D6E00B48DF8 /* ViewController.h */,
 				5341ACB31A130D6E00B48DF8 /* ViewController.m */,
 				5341ACB51A130D6E00B48DF8 /* Images.xcassets */,
-				5341ACA41A130D6E00B48DF8 /* Supporting Files */,
 				5341ACF41A148BEE00B48DF8 /* LoginViewController.h */,
 				5341ACF51A148BEE00B48DF8 /* LoginViewController.m */,
+				5341ACD21A130D8900B48DF8 /* Food Point Advertisement */,
+				5341AD011A14919500B48DF8 /* Profile */,
+				5341ACE31A130E2800B48DF8 /* Graphs */,
+				5341ACDC1A130DBE00B48DF8 /* Images */,
+				5341ACA41A130D6E00B48DF8 /* Supporting Files */,
 			);
 			path = FoodFlow;
 			sourceTree = "<group>";

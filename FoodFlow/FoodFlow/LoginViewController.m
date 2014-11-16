@@ -7,6 +7,8 @@
 //
 
 #import "LoginViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
+
 
 @interface LoginViewController ()
 
@@ -26,6 +28,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self toggleHiddenState:YES];
+    self.lblLoginStatus.text = @"";
+    self.loginButton.readPermissions = @[@"public_profile", @"email"];
+
+    
+//    FBLoginView *loginView = [[FBLoginView alloc] init];
+//    loginView.center = self.view.center;
+//    [self.view addSubview:loginView];
     // Do any additional setup after loading the view.
 }
 
@@ -34,6 +45,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+-(void)toggleHiddenState:(BOOL)shouldHide{
+    self.lblUsername.hidden = shouldHide;
+    self.lblEmail.hidden = shouldHide;
+    self.profilePicture.hidden = shouldHide;
+}
+
 
 /*
 #pragma mark - Navigation
