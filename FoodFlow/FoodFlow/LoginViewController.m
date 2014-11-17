@@ -29,15 +29,15 @@
 {
     [super viewDidLoad];
     
+    UIImage *defaultPic = [UIImage imageNamed:@"duke_univ_blue.png"];
+    UIImageView *defaultView = [[UIImageView alloc] initWithImage:defaultPic];
+    self.defaultPicture = defaultView;
+    
     [self toggleHiddenState:YES];
     self.lblLoginStatus.text = @"";
     self.loginButton.readPermissions = @[@"public_profile", @"email"];
+    self.loginButton.delegate = self;
 
-    
-//    FBLoginView *loginView = [[FBLoginView alloc] init];
-//    loginView.center = self.view.center;
-//    [self.view addSubview:loginView];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,8 +51,27 @@
     self.lblUsername.hidden = shouldHide;
     self.lblEmail.hidden = shouldHide;
     self.profilePicture.hidden = shouldHide;
+    self.lblContinue.hidden = shouldHide;
 }
 
+
+-(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView{
+    self.lblLoginStatus.text = @"You are logged in.";
+    [self toggleHiddenState:NO];
+}
+
+-(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user{
+    NSLog(@"%@", user);
+    self.profilePicture.profileID = user.id;
+    self.lblUsername.text = user.name;
+    self.lblEmail.text = [user objectForKey:@"email"];
+}
+
+-(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView{
+    self.lblLoginStatus.text = @"You are logged out";
+    
+    [self toggleHiddenState:YES];
+}
 
 /*
 #pragma mark - Navigation
