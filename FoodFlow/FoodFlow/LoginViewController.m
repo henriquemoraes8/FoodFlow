@@ -29,10 +29,6 @@
 {
     [super viewDidLoad];
     
-    UIImage *defaultPic = [UIImage imageNamed:@"duke_univ_blue.png"];
-    UIImageView *defaultView = [[UIImageView alloc] initWithImage:defaultPic];
-    self.defaultPicture = defaultView;
-    
     [self toggleHiddenState:YES];
     self.lblLoginStatus.text = @"";
     self.loginButton.readPermissions = @[@"public_profile", @"email"];
@@ -56,19 +52,22 @@
 
 
 -(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView{
-    self.lblLoginStatus.text = @"You are logged in.";
+
     [self toggleHiddenState:NO];
 }
 
 -(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user{
     NSLog(@"%@", user);
     self.profilePicture.profileID = user.id;
-    self.lblUsername.text = user.name;
+    //self.lblUsername.text = user.name;
+    NSString *status = @"You are logged in as ";
+    self.lblLoginStatus.text = [status stringByAppendingString: user.name];
     self.lblEmail.text = [user objectForKey:@"email"];
 }
 
 -(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView{
     self.lblLoginStatus.text = @"You are logged out";
+    
     
     [self toggleHiddenState:YES];
 }

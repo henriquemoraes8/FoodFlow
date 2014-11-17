@@ -50,6 +50,8 @@
 		5B0D2F341A197A4800B85421 /* food_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0D2F331A197A4800B85421 /* food_icon.png */; };
 		5B0D2F361A197C6800B85421 /* sell_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0D2F351A197C6800B85421 /* sell_icon.png */; };
 		5B0D2F381A197D2700B85421 /* mypoints_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0D2F371A197D2700B85421 /* mypoints_icon.png */; };
+		5B0D2F3C1A19911F00B85421 /* SellerNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D2F3B1A19911F00B85421 /* SellerNotificationViewController.m */; };
+		5B0D2F3F1A1991B800B85421 /* BuyerInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D2F3E1A1991B800B85421 /* BuyerInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,10 @@
 		5B0D2F331A197A4800B85421 /* food_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = food_icon.png; path = images/food_icon.png; sourceTree = "<group>"; };
 		5B0D2F351A197C6800B85421 /* sell_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sell_icon.png; path = images/sell_icon.png; sourceTree = "<group>"; };
 		5B0D2F371A197D2700B85421 /* mypoints_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mypoints_icon.png; path = images/mypoints_icon.png; sourceTree = "<group>"; };
+		5B0D2F3A1A19911F00B85421 /* SellerNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SellerNotificationViewController.h; path = Seller/SellerNotificationViewController.h; sourceTree = "<group>"; };
+		5B0D2F3B1A19911F00B85421 /* SellerNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SellerNotificationViewController.m; path = Seller/SellerNotificationViewController.m; sourceTree = "<group>"; };
+		5B0D2F3D1A1991B800B85421 /* BuyerInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyerInfoViewController.h; path = Buyer/BuyerInfoViewController.h; sourceTree = "<group>"; };
+		5B0D2F3E1A1991B800B85421 /* BuyerInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuyerInfoViewController.m; path = Buyer/BuyerInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,7 +209,8 @@
 				5341ACB51A130D6E00B48DF8 /* Images.xcassets */,
 				5341ACF41A148BEE00B48DF8 /* LoginViewController.h */,
 				5341ACF51A148BEE00B48DF8 /* LoginViewController.m */,
-				5341ACD21A130D8900B48DF8 /* Food Point Advertisement */,
+				5B0D2F391A1990C300B85421 /* Seller */,
+				5341ACD21A130D8900B48DF8 /* Buyer */,
 				5341AD011A14919500B48DF8 /* Profile */,
 				5341ACE31A130E2800B48DF8 /* Graphs */,
 				5341ACDC1A130DBE00B48DF8 /* Images */,
@@ -241,17 +248,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5341ACD21A130D8900B48DF8 /* Food Point Advertisement */ = {
+		5341ACD21A130D8900B48DF8 /* Buyer */ = {
 			isa = PBXGroup;
 			children = (
 				5341ACD31A130DAB00B48DF8 /* FoodPointAdvertisementViewController.h */,
-				5341ACD41A130DAB00B48DF8 /* FoodPointAdvertisementViewController.m */,
 				5341ACD51A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.h */,
+				5341ACD41A130DAB00B48DF8 /* FoodPointAdvertisementViewController.m */,
 				5341ACD61A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.m */,
 				5341ACD71A130DAB00B48DF8 /* FoodAdvertisementModel.h */,
 				5341ACD81A130DAB00B48DF8 /* FoodAdvertisementModel.m */,
+				5B0D2F3D1A1991B800B85421 /* BuyerInfoViewController.h */,
+				5B0D2F3E1A1991B800B85421 /* BuyerInfoViewController.m */,
 			);
-			name = "Food Point Advertisement";
+			name = Buyer;
 			sourceTree = "<group>";
 		};
 		5341ACDC1A130DBE00B48DF8 /* Images */ = {
@@ -292,6 +301,15 @@
 				5341AD031A1491AC00B48DF8 /* ProfileViewController.m */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		5B0D2F391A1990C300B85421 /* Seller */ = {
+			isa = PBXGroup;
+			children = (
+				5B0D2F3A1A19911F00B85421 /* SellerNotificationViewController.h */,
+				5B0D2F3B1A19911F00B85421 /* SellerNotificationViewController.m */,
+			);
+			name = Seller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,8 +429,10 @@
 				5341ACDB1A130DAB00B48DF8 /* FoodAdvertisementModel.m in Sources */,
 				5341AD041A1491AC00B48DF8 /* ProfileViewController.m in Sources */,
 				5341ACDA1A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.m in Sources */,
+				5B0D2F3F1A1991B800B85421 /* BuyerInfoViewController.m in Sources */,
 				5341ACF61A148BEE00B48DF8 /* LoginViewController.m in Sources */,
 				5341ACD91A130DAB00B48DF8 /* FoodPointAdvertisementViewController.m in Sources */,
+				5B0D2F3C1A19911F00B85421 /* SellerNotificationViewController.m in Sources */,
 				5341ACAE1A130D6E00B48DF8 /* AppDelegate.m in Sources */,
 				5341ACAA1A130D6E00B48DF8 /* main.m in Sources */,
 			);
