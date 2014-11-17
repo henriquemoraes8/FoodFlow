@@ -232,10 +232,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="l0P-OQ-Wqg" kind="relationship" relationship="viewControllers" id="SZL-St-Zav"/>
+                        <segue destination="goj-JN-1yY" kind="relationship" relationship="viewControllers" id="Djg-Q2-gOv"/>
                         <segue destination="oOT-7h-iF7" kind="relationship" relationship="viewControllers" id="0qg-oN-6fl"/>
                         <segue destination="81G-ek-2ve" kind="relationship" relationship="viewControllers" id="IGa-nf-zDL"/>
-                        <segue destination="goj-JN-1yY" kind="relationship" relationship="viewControllers" id="Djg-Q2-gOv"/>
-                        <segue destination="l0P-OQ-Wqg" kind="relationship" relationship="viewControllers" id="SZL-St-Zav"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VeX-iN-Rfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
