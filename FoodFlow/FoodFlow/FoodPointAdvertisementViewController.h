@@ -12,4 +12,5 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableAnnouncements;
 
+
 @end

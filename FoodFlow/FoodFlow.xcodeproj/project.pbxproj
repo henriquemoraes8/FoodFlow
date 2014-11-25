@@ -251,14 +251,14 @@
 		5341ACD21A130D8900B48DF8 /* Buyer */ = {
 			isa = PBXGroup;
 			children = (
-				5341ACD31A130DAB00B48DF8 /* FoodPointAdvertisementViewController.h */,
 				5341ACD51A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.h */,
-				5341ACD41A130DAB00B48DF8 /* FoodPointAdvertisementViewController.m */,
 				5341ACD61A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.m */,
 				5341ACD71A130DAB00B48DF8 /* FoodAdvertisementModel.h */,
 				5341ACD81A130DAB00B48DF8 /* FoodAdvertisementModel.m */,
 				5B0D2F3D1A1991B800B85421 /* BuyerInfoViewController.h */,
 				5B0D2F3E1A1991B800B85421 /* BuyerInfoViewController.m */,
+				5341ACD41A130DAB00B48DF8 /* FoodPointAdvertisementViewController.m */,
+				5341ACD31A130DAB00B48DF8 /* FoodPointAdvertisementViewController.h */,
 			);
 			name = Buyer;
 			sourceTree = "<group>";
