@@ -25,6 +25,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *defaultPicture;
 
+- (IBAction)loginButtonPressed:(id)sender;
 
 
 @end
