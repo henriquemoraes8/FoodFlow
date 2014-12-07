@@ -19,6 +19,10 @@
     return self;
 }
 
+- (void)viewDidLoad{
+}
+
+
 - (void)awakeFromNib
 {
     // Initialization code

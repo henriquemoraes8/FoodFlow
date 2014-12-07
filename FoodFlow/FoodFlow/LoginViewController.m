@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "AppDelegate.h"
+#import "BackgroundLayer.h"
 
 #import <FacebookSDK/FacebookSDK.h>
 
@@ -40,6 +41,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self updateInterface];
+    [super viewWillAppear:animated];
+    //Add gradient background
+    CAGradientLayer *bgLayer = [BackgroundLayer blueGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
 }
 
 - (void)updateInterface {
@@ -184,6 +190,7 @@
 - (void)populateLoggedInInterface {
     PFUser *user = [PFUser currentUser];
     self.profilePicture.profileID = user[@"facebookID"];
+    self.profilePicture.alpha = 1;
     NSString *status = @"You are logged in as ";
     self.lblLoginStatus.text = [status stringByAppendingString: user[@"name"]];
     

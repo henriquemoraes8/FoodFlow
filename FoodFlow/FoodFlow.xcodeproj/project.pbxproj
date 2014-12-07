@@ -67,6 +67,8 @@
 		5B0D2F381A197D2700B85421 /* mypoints_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0D2F371A197D2700B85421 /* mypoints_icon.png */; };
 		5B0D2F3C1A19911F00B85421 /* SellerNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D2F3B1A19911F00B85421 /* SellerNotificationViewController.m */; };
 		5B0D2F3F1A1991B800B85421 /* BuyerInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D2F3E1A1991B800B85421 /* BuyerInfoViewController.m */; };
+		9249F5CC1A34FA80005E348C /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9249F5CB1A34FA80005E348C /* BackgroundLayer.m */; };
+		9249F5CE1A3502D4005E348C /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 9249F5CD1A3502D4005E348C /* bubble.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +158,9 @@
 		5B0D2F3B1A19911F00B85421 /* SellerNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SellerNotificationViewController.m; path = Seller/SellerNotificationViewController.m; sourceTree = "<group>"; };
 		5B0D2F3D1A1991B800B85421 /* BuyerInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyerInfoViewController.h; path = Buyer/BuyerInfoViewController.h; sourceTree = "<group>"; };
 		5B0D2F3E1A1991B800B85421 /* BuyerInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuyerInfoViewController.m; path = Buyer/BuyerInfoViewController.m; sourceTree = "<group>"; };
+		9249F5CA1A34FA80005E348C /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
+		9249F5CB1A34FA80005E348C /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
+		9249F5CD1A3502D4005E348C /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +288,8 @@
 		5341ACA41A130D6E00B48DF8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9249F5CA1A34FA80005E348C /* BackgroundLayer.h */,
+				9249F5CB1A34FA80005E348C /* BackgroundLayer.m */,
 				5341ACA51A130D6E00B48DF8 /* FoodFlow-Info.plist */,
 				5341ACA61A130D6E00B48DF8 /* InfoPlist.strings */,
 				5341ACA91A130D6E00B48DF8 /* main.m */,
@@ -326,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				5B0D2F371A197D2700B85421 /* mypoints_icon.png */,
+				9249F5CD1A3502D4005E348C /* bubble.png */,
 				5B0D2F351A197C6800B85421 /* sell_icon.png */,
 				5B0D2F331A197A4800B85421 /* food_icon.png */,
 				5B0D2F2F1A1977B400B85421 /* settings_icon.png */,
@@ -491,6 +499,7 @@
 				5B0D2F341A197A4800B85421 /* food_icon.png in Resources */,
 				5341ACFE1A148EF400B48DF8 /* checkConfirma.png in Resources */,
 				5B0D2F381A197D2700B85421 /* mypoints_icon.png in Resources */,
+				9249F5CE1A3502D4005E348C /* bubble.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +526,7 @@
 				5341AD041A1491AC00B48DF8 /* ProfileViewController.m in Sources */,
 				5341ACDA1A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.m in Sources */,
 				5B0D2F3F1A1991B800B85421 /* BuyerInfoViewController.m in Sources */,
+				9249F5CC1A34FA80005E348C /* BackgroundLayer.m in Sources */,
 				5341ACF61A148BEE00B48DF8 /* LoginViewController.m in Sources */,
 				5341ACD91A130DAB00B48DF8 /* FoodPointAdvertisementViewController.m in Sources */,
 				5B0D2F3C1A19911F00B85421 /* SellerNotificationViewController.m in Sources */,

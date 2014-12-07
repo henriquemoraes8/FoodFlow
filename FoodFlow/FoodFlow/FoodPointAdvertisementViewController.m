@@ -34,26 +34,32 @@
 {
     [super viewDidLoad];
     
-    PFUser *user = [PFUser currentUser];
-    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
-    [query whereKey:@"sellAmount" greaterThanOrEqualTo:user[@"buyAmount"]];
-    [query whereKey:@"isSeller" equalTo:@YES];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
+        dispatch_async(dispatch_get_main_queue(), ^{ // 2
             
-            for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
-            }
-            
-            users = objects;
-            [_tableAnnouncements reloadData];
-        } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
-}
+            PFUser *user = [PFUser currentUser];
+            PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+            [query whereKey:@"sellAmount" greaterThanOrEqualTo:user[@"buyAmount"]];
+            [query whereKey:@"isSeller" equalTo:@YES];
+            [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                if (!error) {
+                    // The find succeeded.
+                    NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
+                    
+                    for (PFObject *object in objects) {
+                        NSLog(@"%@", object.objectId);
+                    }
+                    
+                    users = objects;
+                    [_tableAnnouncements reloadData];
+                } else {
+                    NSLog(@"Error: %@ %@", error, [error userInfo]);
+                }
+            }];
+
+        });
+    });
+   }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return users.count;

@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *foodAvailable;
 @property (weak, nonatomic) IBOutlet UILabel *discount;
 
+
 @property (weak, nonatomic) IBOutlet UIView *status;
 
 @end
