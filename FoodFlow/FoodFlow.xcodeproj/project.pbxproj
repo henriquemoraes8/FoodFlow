@@ -21,7 +21,6 @@
 		5341ACC91A130D6E00B48DF8 /* FoodFlowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5341ACC81A130D6E00B48DF8 /* FoodFlowTests.m */; };
 		5341ACD91A130DAB00B48DF8 /* FoodPointAdvertisementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5341ACD41A130DAB00B48DF8 /* FoodPointAdvertisementViewController.m */; };
 		5341ACDA1A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5341ACD61A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.m */; };
-		5341ACDB1A130DAB00B48DF8 /* FoodAdvertisementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5341ACD81A130DAB00B48DF8 /* FoodAdvertisementModel.m */; };
 		5341ACE01A130DCB00B48DF8 /* dataReferencia.png in Resources */ = {isa = PBXBuildFile; fileRef = 5341ACDD1A130DCB00B48DF8 /* dataReferencia.png */; };
 		5341ACE11A130DCB00B48DF8 /* dataAgenda.png in Resources */ = {isa = PBXBuildFile; fileRef = 5341ACDE1A130DCB00B48DF8 /* dataAgenda.png */; };
 		5341ACE21A130DCB00B48DF8 /* img-data-prazo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5341ACDF1A130DCB00B48DF8 /* img-data-prazo.png */; };
@@ -53,6 +52,7 @@
 		53FB80061A341B7000AE7119 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FB80051A341B7000AE7119 /* StoreKit.framework */; };
 		53FB80081A341B8C00AE7119 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FB80071A341B8C00AE7119 /* SystemConfiguration.framework */; };
 		53FB80101A3446E000AE7119 /* PurchaseInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FB800F1A3446E000AE7119 /* PurchaseInformationViewController.m */; };
+		53FB80141A344FDA00AE7119 /* UserSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FB80131A344FDA00AE7119 /* UserSettingsViewController.m */; };
 		5B0D2B441A1938DE00B85421 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0D2B3F1A1938DE00B85421 /* Accounts.framework */; };
 		5B0D2B451A1938DE00B85421 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0D2B401A1938DE00B85421 /* AdSupport.framework */; };
 		5B0D2B461A1938DE00B85421 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0D2B411A1938DE00B85421 /* CoreData.framework */; };
@@ -101,8 +101,6 @@
 		5341ACD41A130DAB00B48DF8 /* FoodPointAdvertisementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodPointAdvertisementViewController.m; sourceTree = "<group>"; };
 		5341ACD51A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodAdvertisementTableViewCell.h; sourceTree = "<group>"; };
 		5341ACD61A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodAdvertisementTableViewCell.m; sourceTree = "<group>"; };
-		5341ACD71A130DAB00B48DF8 /* FoodAdvertisementModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodAdvertisementModel.h; sourceTree = "<group>"; };
-		5341ACD81A130DAB00B48DF8 /* FoodAdvertisementModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodAdvertisementModel.m; sourceTree = "<group>"; };
 		5341ACDD1A130DCB00B48DF8 /* dataReferencia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dataReferencia.png; sourceTree = "<group>"; };
 		5341ACDE1A130DCB00B48DF8 /* dataAgenda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dataAgenda.png; sourceTree = "<group>"; };
 		5341ACDF1A130DCB00B48DF8 /* img-data-prazo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-data-prazo.png"; sourceTree = "<group>"; };
@@ -140,6 +138,8 @@
 		53FB80071A341B8C00AE7119 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		53FB800E1A3446E000AE7119 /* PurchaseInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseInformationViewController.h; sourceTree = "<group>"; };
 		53FB800F1A3446E000AE7119 /* PurchaseInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseInformationViewController.m; sourceTree = "<group>"; };
+		53FB80121A344FDA00AE7119 /* UserSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSettingsViewController.h; sourceTree = "<group>"; };
+		53FB80131A344FDA00AE7119 /* UserSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSettingsViewController.m; sourceTree = "<group>"; };
 		5B0D2B3F1A1938DE00B85421 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		5B0D2B401A1938DE00B85421 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		5B0D2B411A1938DE00B85421 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -259,6 +259,7 @@
 		5341ACA31A130D6E00B48DF8 /* FoodFlow */ = {
 			isa = PBXGroup;
 			children = (
+				53FB80111A344FC600AE7119 /* Settings */,
 				53FB7FEB1A3414FF00AE7119 /* Categories */,
 				5341ACAC1A130D6E00B48DF8 /* AppDelegate.h */,
 				5341ACAD1A130D6E00B48DF8 /* AppDelegate.m */,
@@ -313,8 +314,6 @@
 			children = (
 				5341ACD51A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.h */,
 				5341ACD61A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.m */,
-				5341ACD71A130DAB00B48DF8 /* FoodAdvertisementModel.h */,
-				5341ACD81A130DAB00B48DF8 /* FoodAdvertisementModel.m */,
 				5B0D2F3D1A1991B800B85421 /* BuyerInfoViewController.h */,
 				5B0D2F3E1A1991B800B85421 /* BuyerInfoViewController.m */,
 				5341ACD31A130DAB00B48DF8 /* FoodPointAdvertisementViewController.h */,
@@ -379,6 +378,15 @@
 				53FB800F1A3446E000AE7119 /* PurchaseInformationViewController.m */,
 			);
 			name = "Purchase Information";
+			sourceTree = "<group>";
+		};
+		53FB80111A344FC600AE7119 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				53FB80121A344FDA00AE7119 /* UserSettingsViewController.h */,
+				53FB80131A344FDA00AE7119 /* UserSettingsViewController.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		5B0D2F391A1990C300B85421 /* Seller */ = {
@@ -506,7 +514,6 @@
 				5341ACEF1A13101500B48DF8 /* PieChartViewController.m in Sources */,
 				53FB7FEE1A34156F00AE7119 /* CALayer+RuntimeAttribute.m in Sources */,
 				53FB80101A3446E000AE7119 /* PurchaseInformationViewController.m in Sources */,
-				5341ACDB1A130DAB00B48DF8 /* FoodAdvertisementModel.m in Sources */,
 				5341AD041A1491AC00B48DF8 /* ProfileViewController.m in Sources */,
 				5341ACDA1A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.m in Sources */,
 				5B0D2F3F1A1991B800B85421 /* BuyerInfoViewController.m in Sources */,
@@ -515,6 +522,7 @@
 				5B0D2F3C1A19911F00B85421 /* SellerNotificationViewController.m in Sources */,
 				5341ACAE1A130D6E00B48DF8 /* AppDelegate.m in Sources */,
 				5341ACAA1A130D6E00B48DF8 /* main.m in Sources */,
+				53FB80141A344FDA00AE7119 /* UserSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,6 @@
 //
 
 #import "FoodPointAdvertisementViewController.h"
-#import "FoodAdvertisementModel.h"
 #import "FoodAdvertisementTableViewCell.h"
 #import "AppDelegate.h"
 
@@ -48,18 +47,12 @@
                 NSLog(@"%@", object.objectId);
             }
             
+            users = objects;
             [_tableAnnouncements reloadData];
         } else {
-            // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -68,20 +61,20 @@
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FoodAdvertisementTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    FoodAdvertisementModel *model = users[indexPath.row];
-    cell.name.text = model.userName;
-    cell.foodAvailable.text = [NSString stringWithFormat:@"Food Available: $%@",model.foodAvailable];
-    cell.discount.text = [NSString stringWithFormat:@"Discount: %@%%",model.discountRate];
+    PFUser *user = users[indexPath.row];
+    cell.name.text = user[@"name"];
+    cell.foodAvailable.text = [NSString stringWithFormat:@"Food Available: $%@",user[@"sellAmount"]];
+    cell.discount.text = [NSString stringWithFormat:@"Discount: %@%%",user[@"discountRate"]];
     
     cell.image.layer.borderColor = [UIColor colorWithRed:1.0/255.0 green:86.0/255.0 blue:128.0/255.0 alpha:1].CGColor;
     cell.image.layer.borderWidth = 2.0;
     cell.image.layer.masksToBounds = YES;
-    cell.image.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.imageUser]]];
+    cell.image.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user[@"image"]]]];
     cell.image.layer.cornerRadius = cell.image.frame.size.height/2;
     
     cell.status.layer.cornerRadius = cell.status.frame.size.height/2;
     cell.status.layer.masksToBounds = YES;
-    cell.status.backgroundColor = model.isOnCampus ? [UIColor greenColor] : [UIColor grayColor];
+    cell.status.backgroundColor = [UIColor greenColor];//model.isOnCampus ? [UIColor greenColor] : [UIColor grayColor];
     
     return cell;
 }
