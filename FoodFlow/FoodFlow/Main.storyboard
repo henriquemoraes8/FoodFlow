@@ -366,10 +366,6 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zXb-AS-3cc" customClass="FBLoginView">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="160" placeholderIntrinsicHeight="284" translatesAutoresizingMaskIntoConstraints="NO" id="Hlx-OG-txo" customClass="FBLoginView">
-                                <rect key="frame" x="27" y="446" width="266" height="51"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y6P-v5-rQJ"/>
                             <view contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="219" placeholderIntrinsicHeight="185" translatesAutoresizingMaskIntoConstraints="NO" id="GTY-nr-AIr" customClass="FBProfilePictureView">
                                 <rect key="frame" x="58" y="123" width="199" height="199"/>
@@ -423,9 +419,9 @@
                                 <color key="textColor" red="0.0" green="0.33725490200000002" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sie-3P-RVa">
-                                <rect key="frame" x="43" y="518" width="245" height="30"/>
-                                <state key="normal" title="login face">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sie-3P-RVa">
+                                <rect key="frame" x="18" y="464" width="284" height="59"/>
+                                <state key="normal" image="facebook-connect.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -439,7 +435,6 @@
                     <connections>
                         <outlet property="lblContinue" destination="iaQ-rV-X27" id="Id6-wG-CGn"/>
                         <outlet property="lblLoginStatus" destination="Qzz-19-h1e" id="NlZ-e9-KYc"/>
-                        <outlet property="loginButton" destination="Hlx-OG-txo" id="qHA-T8-ghZ"/>
                         <outlet property="profilePicture" destination="GTY-nr-AIr" id="OSq-0p-gbo"/>
                     </connections>
                 </viewController>
@@ -468,6 +463,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="facebook-connect.png" width="478" height="107"/>
         <image name="food_icon.png" width="30" height="30"/>
         <image name="mypoints_icon.png" width="30" height="30"/>
         <image name="sell_icon.png" width="35" height="35"/>
