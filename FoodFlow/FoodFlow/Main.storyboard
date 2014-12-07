@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YkM-Ho-0nn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YkM-Ho-0nn">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Purchase Information-->
         <scene sceneID="CO7-Bf-2Zh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f8j-dZ-YIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="3JQ-lh-5yo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gMB-ID-PId"/>
@@ -68,6 +67,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="8kf-ue-7lJ"/>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f8j-dZ-YIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="714" y="-49"/>
         </scene>
@@ -347,33 +347,6 @@
             </objects>
             <point key="canvasLocation" x="1105" y="-49"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="qv8-Q6-DOc">
-            <objects>
-                <tableViewController id="OqQ-f0-BqG" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="spG-pi-IIn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="csx-Gb-hc0">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="csx-Gb-hc0" id="Loa-gf-BYI">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="OqQ-f0-BqG" id="GI7-mC-nZC"/>
-                            <outlet property="delegate" destination="OqQ-f0-BqG" id="SiI-oz-zYF"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="0oa-VN-70T"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="laP-y0-tNC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2227" y="-368"/>
-        </scene>
         <!--Login View Controller-->
         <scene sceneID="jdT-lK-AGc">
             <objects>
@@ -420,7 +393,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzz-19-h1e">
-                                <rect key="frame" x="9" y="345" width="320" height="24"/>
+                                <rect key="frame" x="0.0" y="358" width="320" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
