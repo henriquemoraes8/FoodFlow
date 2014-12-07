@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UISwitch *switchSeller;
 
 - (IBAction)buttonSaveSettings:(id)sender;
+- (IBAction)logout:(id)sender;
 
 @end
