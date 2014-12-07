@@ -7,7 +7,7 @@
         <!--Purchase Information-->
         <scene sceneID="CO7-Bf-2Zh">
             <objects>
-                <viewController id="3JQ-lh-5yo" sceneMemberID="viewController">
+                <viewController id="3JQ-lh-5yo" customClass="PurchaseInformationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gMB-ID-PId"/>
                         <viewControllerLayoutGuide type="bottom" id="HGL-kP-kCU"/>
@@ -66,6 +66,10 @@
                     <navigationItem key="navigationItem" title="Purchase Information" id="FSs-Fn-qFz">
                         <barButtonItem key="backBarButtonItem" title="Back" id="8kf-ue-7lJ"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="fieldEstimateAmount" destination="5J8-zA-GBR" id="1mA-wd-SVv"/>
+                        <outlet property="fieldMeetingLocation" destination="djb-gC-BA6" id="IXE-zE-3wf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8j-dZ-YIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -433,6 +437,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="2A1-tJ-gaO"/>
                     <connections>
+                        <outlet property="buttonLogin" destination="sie-3P-RVa" id="MCP-rk-RHu"/>
                         <outlet property="lblContinue" destination="iaQ-rV-X27" id="Id6-wG-CGn"/>
                         <outlet property="lblLoginStatus" destination="Qzz-19-h1e" id="NlZ-e9-KYc"/>
                         <outlet property="profilePicture" destination="GTY-nr-AIr" id="OSq-0p-gbo"/>

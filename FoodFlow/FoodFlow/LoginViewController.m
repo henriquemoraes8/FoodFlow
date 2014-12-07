@@ -31,8 +31,10 @@
 {
     [super viewDidLoad];
     
-    [self toggleHiddenState:YES];
-    self.lblLoginStatus.text = @"";
+    PFUser *user = [PFUser currentUser];
+    
+    user && user[@"facebookID"] ? [self populateLoggedInInterface] : [self populateLoggedOffInterface];
+    
     self.loginButton.readPermissions = @[@"public_profile", @"email"];
     self.loginButton.delegate = self;
 
@@ -50,6 +52,7 @@
     self.lblEmail.hidden = shouldHide;
     self.profilePicture.hidden = shouldHide;
     self.lblContinue.hidden = shouldHide;
+    self.buttonLogin.hidden = shouldHide;
 }
 
 
@@ -159,12 +162,43 @@
             } else {
                 NSLog(@"User with facebook logged in!");
             }
+            [self updateCurrentPFUser:user];
         }
     }];
 }
 
-- (void)populateUserInterface {
+- (void)updateCurrentPFUser:(PFUser*)user {
+    FBRequest *request = [FBRequest requestForMe];
+    [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        if (!error) {
+            // result is a dictionary with the user's Facebook data
+            NSDictionary *userData = (NSDictionary *)result;
+            
+            NSString *facebookID = userData[@"id"];
+            user[@"name"] = userData[@"name"];
+            user[@"gender"] = userData[@"gender"];
+            
+            user[@"facebookID"] = facebookID;
+            user[@"image"] = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID];
+            
+            [user saveInBackground];
+            [self populateLoggedInInterface];
+        }
+    }];
+}
+
+- (void)populateLoggedInInterface {
+    PFUser *user = [PFUser currentUser];
+    self.profilePicture.profileID = user[@"facebookID"];
+    NSString *status = @"You are logged in as ";
+    self.lblLoginStatus.text = [status stringByAppendingString: user[@"name"]];
     
+    [self toggleHiddenState:NO];
+}
+
+- (void)populateLoggedOffInterface {
+    self.lblLoginStatus.text = @"you are logged out";
+    [self toggleHiddenState:YES];
 }
 
 @end

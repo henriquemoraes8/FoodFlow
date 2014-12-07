@@ -52,6 +52,7 @@
 		53FB80041A341B6800AE7119 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FB80031A341B6800AE7119 /* Security.framework */; };
 		53FB80061A341B7000AE7119 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FB80051A341B7000AE7119 /* StoreKit.framework */; };
 		53FB80081A341B8C00AE7119 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FB80071A341B8C00AE7119 /* SystemConfiguration.framework */; };
+		53FB80101A3446E000AE7119 /* PurchaseInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FB800F1A3446E000AE7119 /* PurchaseInformationViewController.m */; };
 		5B0D2B441A1938DE00B85421 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0D2B3F1A1938DE00B85421 /* Accounts.framework */; };
 		5B0D2B451A1938DE00B85421 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0D2B401A1938DE00B85421 /* AdSupport.framework */; };
 		5B0D2B461A1938DE00B85421 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0D2B411A1938DE00B85421 /* CoreData.framework */; };
@@ -137,6 +138,8 @@
 		53FB80031A341B6800AE7119 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		53FB80051A341B7000AE7119 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		53FB80071A341B8C00AE7119 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		53FB800E1A3446E000AE7119 /* PurchaseInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseInformationViewController.h; sourceTree = "<group>"; };
+		53FB800F1A3446E000AE7119 /* PurchaseInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseInformationViewController.m; sourceTree = "<group>"; };
 		5B0D2B3F1A1938DE00B85421 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		5B0D2B401A1938DE00B85421 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		5B0D2B411A1938DE00B85421 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -265,6 +268,7 @@
 				5341ACB51A130D6E00B48DF8 /* Images.xcassets */,
 				5341ACF41A148BEE00B48DF8 /* LoginViewController.h */,
 				5341ACF51A148BEE00B48DF8 /* LoginViewController.m */,
+				53FB800D1A3446B900AE7119 /* Purchase Information */,
 				5B0D2F391A1990C300B85421 /* Seller */,
 				5341ACD21A130D8900B48DF8 /* Buyer */,
 				5341AD011A14919500B48DF8 /* Profile */,
@@ -313,8 +317,8 @@
 				5341ACD81A130DAB00B48DF8 /* FoodAdvertisementModel.m */,
 				5B0D2F3D1A1991B800B85421 /* BuyerInfoViewController.h */,
 				5B0D2F3E1A1991B800B85421 /* BuyerInfoViewController.m */,
-				5341ACD41A130DAB00B48DF8 /* FoodPointAdvertisementViewController.m */,
 				5341ACD31A130DAB00B48DF8 /* FoodPointAdvertisementViewController.h */,
+				5341ACD41A130DAB00B48DF8 /* FoodPointAdvertisementViewController.m */,
 			);
 			name = Buyer;
 			sourceTree = "<group>";
@@ -366,6 +370,15 @@
 				53FB7FED1A34156F00AE7119 /* CALayer+RuntimeAttribute.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		53FB800D1A3446B900AE7119 /* Purchase Information */ = {
+			isa = PBXGroup;
+			children = (
+				53FB800E1A3446E000AE7119 /* PurchaseInformationViewController.h */,
+				53FB800F1A3446E000AE7119 /* PurchaseInformationViewController.m */,
+			);
+			name = "Purchase Information";
 			sourceTree = "<group>";
 		};
 		5B0D2F391A1990C300B85421 /* Seller */ = {
@@ -492,6 +505,7 @@
 				5341ACB41A130D6E00B48DF8 /* ViewController.m in Sources */,
 				5341ACEF1A13101500B48DF8 /* PieChartViewController.m in Sources */,
 				53FB7FEE1A34156F00AE7119 /* CALayer+RuntimeAttribute.m in Sources */,
+				53FB80101A3446E000AE7119 /* PurchaseInformationViewController.m in Sources */,
 				5341ACDB1A130DAB00B48DF8 /* FoodAdvertisementModel.m in Sources */,
 				5341AD041A1491AC00B48DF8 /* ProfileViewController.m in Sources */,
 				5341ACDA1A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.m in Sources */,
