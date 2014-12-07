@@ -15,6 +15,9 @@
 {
     [FBLoginView class];
     [FBProfilePictureView class];
+    [Parse setApplicationId:@"Mfd50KnlM4lq6j7fyhTGjI5a1xv3hLaBA8kxAdlJ"
+                  clientKey:@"qNnpR8AjpBFh2xVvUNTLu5Pbzwhctn4NWjjLmx1e"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }
 							

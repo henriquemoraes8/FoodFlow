@@ -7,7 +7,6 @@
         <!--Purchase Information-->
         <scene sceneID="CO7-Bf-2Zh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f8j-dZ-YIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="3JQ-lh-5yo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gMB-ID-PId"/>
@@ -68,6 +67,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="8kf-ue-7lJ"/>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f8j-dZ-YIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="714" y="-49"/>
         </scene>
@@ -212,12 +212,13 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="User Settings" id="EKj-wc-Rcq">
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="Sv6-LO-OmW">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="Sv6-LO-OmW">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2Rt-v0-42L">
                                                 <rect key="frame" x="62" y="472" width="74" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.83014181385869568" green="0.83014181385869568" blue="0.83014181385869568" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="Log out">
+                                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -229,7 +230,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2on-SH-ndK">
-                                <rect key="frame" x="91" y="418" width="138" height="47"/>
+                                <rect key="frame" x="91" y="388" width="138" height="47"/>
                                 <color key="backgroundColor" red="0.88619146800000004" green="0.85788030999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Save Settings">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -242,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZM3-m6-pdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="152" y="-745"/>
+            <point key="canvasLocation" x="133" y="-712"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="FW8-EB-Qpr">
@@ -263,7 +264,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VeX-iN-Rfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-234" y="-732"/>
+            <point key="canvasLocation" x="-222" y="-672"/>
         </scene>
         <!--Available Sellers-->
         <scene sceneID="Dnc-yb-iFc">
@@ -396,12 +397,6 @@
                                 <rect key="frame" x="27" y="446" width="266" height="51"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FOOD FLOW" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nI-eH-Fgg">
-                                <rect key="frame" x="79" y="33" width="203" height="82"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y6P-v5-rQJ"/>
                             <view contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="219" placeholderIntrinsicHeight="185" translatesAutoresizingMaskIntoConstraints="NO" id="GTY-nr-AIr" customClass="FBProfilePictureView">
                                 <rect key="frame" x="58" y="123" width="199" height="199"/>
@@ -409,12 +404,36 @@
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderIBColor">
+                                        <color key="value" red="0.2901960784" green="0.74117647060000003" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaQ-rV-X27">
-                                <rect key="frame" x="124" y="408" width="62" height="30"/>
+                                <rect key="frame" x="113" y="408" width="89" height="30"/>
                                 <state key="normal" title="Continue">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderIBColor">
+                                        <color key="value" red="0.2901960784" green="0.74117647060000003" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="LZQ-M9-8Ud" kind="modal" id="TXI-cR-qwJ"/>
                                 </connections>
@@ -423,6 +442,12 @@
                                 <rect key="frame" x="9" y="345" width="320" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FOOD FLOW" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nI-eH-Fgg">
+                                <rect key="frame" x="56" y="33" width="203" height="82"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <color key="textColor" red="0.0" green="0.33725490200000002" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>

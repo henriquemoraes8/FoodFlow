@@ -31,6 +31,10 @@
 {
     [super viewDidLoad];
     
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    testObject[@"foo"] = @"bar";
+    [testObject saveInBackground];
+    
     [self toggleHiddenState:YES];
     self.lblLoginStatus.text = @"";
     self.loginButton.readPermissions = @[@"public_profile", @"email"];
