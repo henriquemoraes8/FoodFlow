@@ -31,13 +31,20 @@
 {
     [super viewDidLoad];
     
-    PFUser *user = [PFUser currentUser];
-    
-    user && user[@"facebookID"] ? [self populateLoggedInInterface] : [self populateLoggedOffInterface];
+    [self updateInterface];
     
     self.loginButton.readPermissions = @[@"public_profile", @"email"];
     self.loginButton.delegate = self;
 
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self updateInterface];
+}
+
+- (void)updateInterface {
+    PFUser *user = [PFUser currentUser];
+    user && user[@"facebookID"] ? [self populateLoggedInInterface] : [self populateLoggedOffInterface];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,19 +83,6 @@
     self.profilePicture.profileID = nil;
     [self toggleHiddenState:YES];
 }
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 
 // Handle possible errors that can occur during login

@@ -38,5 +38,10 @@
     }];
 }
 
+- (IBAction)logout:(id)sender {
+    [PFUser logOut];
+    [[self navigationController] popToRootViewControllerAnimated:YES];
+}
+
 
 @end
