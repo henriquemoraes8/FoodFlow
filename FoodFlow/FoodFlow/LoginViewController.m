@@ -52,7 +52,7 @@
     self.lblEmail.hidden = shouldHide;
     self.profilePicture.hidden = shouldHide;
     self.lblContinue.hidden = shouldHide;
-    self.buttonLogin.hidden = shouldHide;
+    self.buttonLogin.hidden = !shouldHide;
 }
 
 
