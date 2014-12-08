@@ -13,10 +13,12 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *fieldAvailablePoints;
 
+
 @property (weak, nonatomic) IBOutlet UITextField *fieldDiscountRate;
 @property (weak, nonatomic) IBOutlet UISwitch *switchSeller;
 
 - (IBAction)textFieldDismiss:(id)sender;
+- (IBAction)fieldDiscountDismiss:(id)sender;
 - (IBAction)buttonSaveSettings:(id)sender;
 - (IBAction)logout:(id)sender;
 

@@ -31,12 +31,18 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5J8-zA-GBR">
                                 <rect key="frame" x="177" y="136" width="132" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="fieldEstimateDismiss:" destination="3JQ-lh-5yo" eventType="editingDidEndOnExit" id="UMJ-Ng-ONU"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="djb-gC-BA6">
                                 <rect key="frame" x="177" y="187" width="132" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="fieldMeetingLocationDismiss:" destination="3JQ-lh-5yo" eventType="editingDidEndOnExit" id="zme-Rb-DCu"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kxy-JG-DP0">
                                 <rect key="frame" x="81" y="295" width="169" height="44"/>
@@ -195,7 +201,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="points available to sell" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tuk-oH-DL9">
                                 <rect key="frame" x="117" y="94" width="180" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="textFieldDismiss:" destination="81G-ek-2ve" eventType="editingDidEndOnExit" id="eS8-nj-ZUp"/>
                                 </connections>
@@ -247,8 +253,9 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="discount from sale" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k4I-Jm-SiP">
                                 <rect key="frame" x="117" y="144" width="180" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
+                                    <action selector="fieldDiscountDismiss:" destination="81G-ek-2ve" eventType="editingDidEndOnExit" id="3jN-pw-ywh"/>
                                     <action selector="textFieldDismiss:" destination="81G-ek-2ve" eventType="editingDidEnd" id="EPC-f8-0SK"/>
                                 </connections>
                             </textField>

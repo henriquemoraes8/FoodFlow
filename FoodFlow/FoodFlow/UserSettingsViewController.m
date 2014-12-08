@@ -53,7 +53,10 @@
 
 -(IBAction)textFieldDismiss:(id)sender{
     [self.fieldAvailablePoints resignFirstResponder];
-    [self.fieldDiscountRate resignFirstResponder];
+
 }
 
+- (IBAction)fieldDiscountDismiss:(id)sender {
+        [self.fieldDiscountRate resignFirstResponder];
+}
 @end

@@ -10,6 +10,9 @@
 
 @interface PurchaseInformationViewController : UIViewController
 
+- (IBAction)fieldEstimateDismiss:(id)sender;
+- (IBAction)fieldMeetingLocationDismiss:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UITextField *fieldEstimateAmount;
 @property (weak, nonatomic) IBOutlet UITextField *fieldMeetingLocation;
 

@@ -11,6 +11,12 @@
 
 @implementation PurchaseInformationViewController
 
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+    
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     PFUser *user = [PFUser currentUser];
     
@@ -33,4 +39,11 @@
     return amount ? YES : NO;
 }
 
+-(IBAction)fieldEstimateDismiss:(id)sender{
+    [self.fieldEstimateAmount resignFirstResponder];
+}
+
+- (IBAction)fieldMeetingLocationDismiss:(id)sender {
+    [self.fieldMeetingLocation resignFirstResponder];
+}
 @end
