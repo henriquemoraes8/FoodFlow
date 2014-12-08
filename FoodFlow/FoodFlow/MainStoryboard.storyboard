@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="odO-Bu-mom">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="odO-Bu-mom">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Purchase Information-->
@@ -44,17 +44,6 @@
                                     <action selector="fieldMeetingLocationDismiss:" destination="3JQ-lh-5yo" eventType="editingDidEndOnExit" id="zme-Rb-DCu"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Kxy-JG-DP0">
-                                <rect key="frame" x="81" y="295" width="169" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.88619146800000004" green="0.85788030999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Show me the sellers!">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="RQX-N9-gk9" kind="push" id="Y6K-yK-yCP"/>
-                                </connections>
-                            </button>
                             <navigationBar contentMode="scaleToFill" id="SUv-qG-M26">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -69,6 +58,17 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Kxy-JG-DP0">
+                                <rect key="frame" x="81" y="295" width="169" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.88619146800000004" green="0.85788030999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Show me the sellers!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="RQX-N9-gk9" kind="push" id="Y6K-yK-yCP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -216,7 +216,7 @@
             </objects>
             <point key="canvasLocation" x="959" y="-640"/>
         </scene>
-        <!--Chat List View Controller-->
+        <!--ChatList-->
         <scene sceneID="zXX-ye-jeg">
             <objects>
                 <viewController id="oOT-7h-iF7" customClass="ChatListViewController" sceneMemberID="viewController">
@@ -231,43 +231,63 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8bo-YE-nhR" id="1iU-9i-bPN">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="se2-UO-xlf" kind="push" id="Osr-9T-e2x"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" id="7iG-bt-dmM"/>
+                    <navigationItem key="navigationItem" title="ChatList" id="7iG-bt-dmM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQk-dP-kFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-55" y="78"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="dA9-1p-1my">
+        <!--Chat View Controller-->
+        <scene sceneID="hmc-Y8-uB0">
             <objects>
-                <tableViewController id="se2-UO-xlf" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QIc-8Z-al7">
+                <viewController id="oGT-Fb-Muw" customClass="ChatViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QsW-vn-Rsz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Yue-Hq-ivA">
+                                <rect key="frame" x="273" y="484" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="JWI-5C-oO9">
+                                <rect key="frame" x="10" y="485" width="255" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aM8-H1-3ef" customClass="UIBubbleTableView">
+                                <rect key="frame" x="0.0" y="62" width="320" height="415"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HQE-IB-3c8" customClass="UIBubbleHeaderTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HQE-IB-3c8" id="hOS-To-xNE">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <navigationBar key="tableFooterView" contentMode="scaleToFill" id="mVs-XN-THN">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Title" id="owO-uD-ujt"/>
-                            </items>
-                        </navigationBar>
-                        <connections>
-                            <outlet property="dataSource" destination="se2-UO-xlf" id="pUA-SM-UBT"/>
-                            <outlet property="delegate" destination="se2-UO-xlf" id="k9B-qO-6ty"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="TU1-jn-Zad"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NiC-Ih-Hza" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IMK-qB-he4"/>
+                    <connections>
+                        <outlet property="bubbleTable" destination="aM8-H1-3ef" id="Gog-Sn-Awr"/>
+                        <outlet property="textField" destination="JWI-5C-oO9" id="Ydy-jV-GFg"/>
+                        <outlet property="textInputView" destination="QsW-vn-Rsz" id="m2u-EG-CNf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tP7-69-mUM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="342" y="78"/>
+            <point key="canvasLocation" x="1128" y="773"/>
         </scene>
         <!--Settings-->
         <scene sceneID="wfH-gF-z0V">
@@ -456,7 +476,6 @@
                                             <outlet property="foodAvailable" destination="Vlx-mo-VZN" id="5KH-OP-1Xx"/>
                                             <outlet property="image" destination="9ym-Pr-g8O" id="eLD-6x-erx"/>
                                             <outlet property="name" destination="5cx-Na-lhX" id="cWG-Cl-bnU"/>
-                                            <segue destination="se2-UO-xlf" kind="push" id="JSf-ew-dEX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -471,7 +490,7 @@
                     <tabBarItem key="tabBarItem" title="Buy" image="food_icon.png" id="zq7-tF-V8Z"/>
                     <navigationItem key="navigationItem" title="Available Sellers" id="vWR-FZ-1tr"/>
                     <connections>
-                        <outlet property="tableAnnouncements" destination="1Fh-2I-GOb" id="9UK-Ck-69y"/>
+                        <segue destination="oGT-Fb-Muw" kind="push" identifier="chatSegue" id="r4E-fB-eTo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ipo-ts-pXj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -644,8 +663,5 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="JSf-ew-dEX"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>
