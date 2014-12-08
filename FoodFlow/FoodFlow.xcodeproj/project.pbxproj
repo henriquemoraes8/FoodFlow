@@ -67,6 +67,7 @@
 		5B0D2F381A197D2700B85421 /* mypoints_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0D2F371A197D2700B85421 /* mypoints_icon.png */; };
 		5B0D2F3C1A19911F00B85421 /* SellerNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D2F3B1A19911F00B85421 /* SellerNotificationViewController.m */; };
 		5B0D2F3F1A1991B800B85421 /* BuyerInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D2F3E1A1991B800B85421 /* BuyerInfoViewController.m */; };
+		5BD1A6251A354C5C00A426C2 /* fficon_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BD1A6241A354C5C00A426C2 /* fficon_@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +157,7 @@
 		5B0D2F3B1A19911F00B85421 /* SellerNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SellerNotificationViewController.m; path = Seller/SellerNotificationViewController.m; sourceTree = "<group>"; };
 		5B0D2F3D1A1991B800B85421 /* BuyerInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyerInfoViewController.h; path = Buyer/BuyerInfoViewController.h; sourceTree = "<group>"; };
 		5B0D2F3E1A1991B800B85421 /* BuyerInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuyerInfoViewController.m; path = Buyer/BuyerInfoViewController.m; sourceTree = "<group>"; };
+		5BD1A6241A354C5C00A426C2 /* fficon_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fficon_@2x.png"; path = "../../../fficon_@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +327,7 @@
 		5341ACDC1A130DBE00B48DF8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				5BD1A6241A354C5C00A426C2 /* fficon_@2x.png */,
 				5B0D2F371A197D2700B85421 /* mypoints_icon.png */,
 				5B0D2F351A197C6800B85421 /* sell_icon.png */,
 				5B0D2F331A197A4800B85421 /* food_icon.png */,
@@ -489,6 +492,7 @@
 				5B0D2F361A197C6800B85421 /* sell_icon.png in Resources */,
 				5341ACE01A130DCB00B48DF8 /* dataReferencia.png in Resources */,
 				5B0D2F341A197A4800B85421 /* food_icon.png in Resources */,
+				5BD1A6251A354C5C00A426C2 /* fficon_@2x.png in Resources */,
 				5341ACFE1A148EF400B48DF8 /* checkConfirma.png in Resources */,
 				5B0D2F381A197D2700B85421 /* mypoints_icon.png in Resources */,
 			);
