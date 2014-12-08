@@ -72,6 +72,13 @@
 		92BBC83B1A35285100748CDF /* fbpic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92BBC83A1A35285100748CDF /* fbpic.jpg */; };
 		92BBC83D1A3531EA00748CDF /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BBC83C1A3531E900748CDF /* Firebase.framework */; };
 		92BBC8401A353C8D00748CDF /* SellerNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BBC83F1A353C8D00748CDF /* SellerNotificationTableViewCell.m */; };
+		92BBC8541A356D2000748CDF /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BBC8531A356D2000748CDF /* ChatViewController.m */; };
+		92BBC8601A356D6B00748CDF /* NSBubbleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BBC8561A356D6B00748CDF /* NSBubbleData.m */; };
+		92BBC8611A356D6B00748CDF /* UIBubbleHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BBC8581A356D6B00748CDF /* UIBubbleHeaderTableViewCell.m */; };
+		92BBC8621A356D6B00748CDF /* UIBubbleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BBC85A1A356D6B00748CDF /* UIBubbleTableView.m */; };
+		92BBC8631A356D6B00748CDF /* UIBubbleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BBC85C1A356D6B00748CDF /* UIBubbleTableViewCell.m */; };
+		92BBC8641A356D6B00748CDF /* UIBubbleTypingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BBC85F1A356D6B00748CDF /* UIBubbleTypingTableViewCell.m */; };
+		92BBC8671A3570C700748CDF /* ChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BBC8661A3570C700748CDF /* ChatListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +175,21 @@
 		92BBC83C1A3531E900748CDF /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		92BBC83E1A353C8D00748CDF /* SellerNotificationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SellerNotificationTableViewCell.h; path = Seller/SellerNotificationTableViewCell.h; sourceTree = "<group>"; };
 		92BBC83F1A353C8D00748CDF /* SellerNotificationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SellerNotificationTableViewCell.m; path = Seller/SellerNotificationTableViewCell.m; sourceTree = "<group>"; };
+		92BBC8521A356D2000748CDF /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatViewController.h; path = Chat/ChatViewController.h; sourceTree = "<group>"; };
+		92BBC8531A356D2000748CDF /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatViewController.m; path = Chat/ChatViewController.m; sourceTree = "<group>"; };
+		92BBC8551A356D6B00748CDF /* NSBubbleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSBubbleData.h; path = Chat/NSBubbleData.h; sourceTree = "<group>"; };
+		92BBC8561A356D6B00748CDF /* NSBubbleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSBubbleData.m; path = Chat/NSBubbleData.m; sourceTree = "<group>"; };
+		92BBC8571A356D6B00748CDF /* UIBubbleHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIBubbleHeaderTableViewCell.h; path = Chat/UIBubbleHeaderTableViewCell.h; sourceTree = "<group>"; };
+		92BBC8581A356D6B00748CDF /* UIBubbleHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIBubbleHeaderTableViewCell.m; path = Chat/UIBubbleHeaderTableViewCell.m; sourceTree = "<group>"; };
+		92BBC8591A356D6B00748CDF /* UIBubbleTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIBubbleTableView.h; path = Chat/UIBubbleTableView.h; sourceTree = "<group>"; };
+		92BBC85A1A356D6B00748CDF /* UIBubbleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIBubbleTableView.m; path = Chat/UIBubbleTableView.m; sourceTree = "<group>"; };
+		92BBC85B1A356D6B00748CDF /* UIBubbleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIBubbleTableViewCell.h; path = Chat/UIBubbleTableViewCell.h; sourceTree = "<group>"; };
+		92BBC85C1A356D6B00748CDF /* UIBubbleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIBubbleTableViewCell.m; path = Chat/UIBubbleTableViewCell.m; sourceTree = "<group>"; };
+		92BBC85D1A356D6B00748CDF /* UIBubbleTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIBubbleTableViewDataSource.h; path = Chat/UIBubbleTableViewDataSource.h; sourceTree = "<group>"; };
+		92BBC85E1A356D6B00748CDF /* UIBubbleTypingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIBubbleTypingTableViewCell.h; path = Chat/UIBubbleTypingTableViewCell.h; sourceTree = "<group>"; };
+		92BBC85F1A356D6B00748CDF /* UIBubbleTypingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIBubbleTypingTableViewCell.m; path = Chat/UIBubbleTypingTableViewCell.m; sourceTree = "<group>"; };
+		92BBC8651A3570C700748CDF /* ChatListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatListViewController.h; path = Chat/ChatListViewController.h; sourceTree = "<group>"; };
+		92BBC8661A3570C700748CDF /* ChatListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatListViewController.m; path = Chat/ChatListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +295,7 @@
 		5341ACA31A130D6E00B48DF8 /* FoodFlow */ = {
 			isa = PBXGroup;
 			children = (
+				92BBC8411A356BF200748CDF /* Chat */,
 				53FB80111A344FC600AE7119 /* Settings */,
 				53FB7FEB1A3414FF00AE7119 /* Categories */,
 				5341ACAC1A130D6E00B48DF8 /* AppDelegate.h */,
@@ -418,6 +441,28 @@
 			name = Seller;
 			sourceTree = "<group>";
 		};
+		92BBC8411A356BF200748CDF /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				92BBC8551A356D6B00748CDF /* NSBubbleData.h */,
+				92BBC8561A356D6B00748CDF /* NSBubbleData.m */,
+				92BBC8571A356D6B00748CDF /* UIBubbleHeaderTableViewCell.h */,
+				92BBC8581A356D6B00748CDF /* UIBubbleHeaderTableViewCell.m */,
+				92BBC8591A356D6B00748CDF /* UIBubbleTableView.h */,
+				92BBC85A1A356D6B00748CDF /* UIBubbleTableView.m */,
+				92BBC85B1A356D6B00748CDF /* UIBubbleTableViewCell.h */,
+				92BBC85C1A356D6B00748CDF /* UIBubbleTableViewCell.m */,
+				92BBC85D1A356D6B00748CDF /* UIBubbleTableViewDataSource.h */,
+				92BBC85E1A356D6B00748CDF /* UIBubbleTypingTableViewCell.h */,
+				92BBC85F1A356D6B00748CDF /* UIBubbleTypingTableViewCell.m */,
+				92BBC8521A356D2000748CDF /* ChatViewController.h */,
+				92BBC8531A356D2000748CDF /* ChatViewController.m */,
+				92BBC8651A3570C700748CDF /* ChatListViewController.h */,
+				92BBC8661A3570C700748CDF /* ChatListViewController.m */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -539,18 +584,25 @@
 				5341ACB41A130D6E00B48DF8 /* ViewController.m in Sources */,
 				5341ACEF1A13101500B48DF8 /* PieChartViewController.m in Sources */,
 				53FB7FEE1A34156F00AE7119 /* CALayer+RuntimeAttribute.m in Sources */,
+				92BBC8541A356D2000748CDF /* ChatViewController.m in Sources */,
 				53FB80101A3446E000AE7119 /* PurchaseInformationViewController.m in Sources */,
 				5341AD041A1491AC00B48DF8 /* ProfileViewController.m in Sources */,
 				5341ACDA1A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.m in Sources */,
 				92BBC8401A353C8D00748CDF /* SellerNotificationTableViewCell.m in Sources */,
 				5B0D2F3F1A1991B800B85421 /* BuyerInfoViewController.m in Sources */,
+				92BBC8671A3570C700748CDF /* ChatListViewController.m in Sources */,
+				92BBC8641A356D6B00748CDF /* UIBubbleTypingTableViewCell.m in Sources */,
 				9249F5CC1A34FA80005E348C /* BackgroundLayer.m in Sources */,
 				5341ACF61A148BEE00B48DF8 /* LoginViewController.m in Sources */,
+				92BBC8611A356D6B00748CDF /* UIBubbleHeaderTableViewCell.m in Sources */,
+				92BBC8631A356D6B00748CDF /* UIBubbleTableViewCell.m in Sources */,
 				5341ACD91A130DAB00B48DF8 /* FoodPointAdvertisementViewController.m in Sources */,
 				5B0D2F3C1A19911F00B85421 /* SellerNotificationViewController.m in Sources */,
+				92BBC8601A356D6B00748CDF /* NSBubbleData.m in Sources */,
 				5341ACAE1A130D6E00B48DF8 /* AppDelegate.m in Sources */,
 				5341ACAA1A130D6E00B48DF8 /* main.m in Sources */,
 				53FB80141A344FDA00AE7119 /* UserSettingsViewController.m in Sources */,
+				92BBC8621A356D6B00748CDF /* UIBubbleTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -89,21 +89,10 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"Cell Tapped!");
-    // Check if the Facebook app is installed and we can present
-    // the message dialog
+   
+    //open chat dialogue with this user
     PFUser *user = users[indexPath.row];
-//    NSString *userstring =
-//    NSLog([NSString stringWithFormat:@"user is: %@", user.username]);
-    
-    FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
-    //params.link =
-    [NSURL URLWithString:@"https://developers.facebook.com/docs/ios/share/"];
-    params.name = @"Message Dialog Tutorial";
-    params.caption = @"Build great social apps that engage your friends.";
-    params.picture = [NSURL URLWithString:@"http://i.imgur.com/g3Qc1HN.png"];
-    params.linkDescription = @"Send links from your app using the iOS SDK.";
-    params.friends = @[user[@"facebookID"]];
-    
+
     PFUser *current = [PFUser currentUser];
     PFObject *transaction = [PFObject objectWithClassName:@"Transaction"];
     transaction[@"seller"] = user.objectId;
@@ -115,14 +104,7 @@
     transaction[@"amount"] = [NSNumber numberWithFloat:buyAmount*(1 - discount/100.00)];
     [transaction saveInBackground];
     
-    // If the Facebook app is installed and we can present the share dialog
-    if ([FBDialogs canPresentMessageDialogWithParams:params]) {
-        // Enable button or other UI to initiate launch of the Message Dialog
-    }  else {
-        // Disable button or other UI for Message Dialog
-        NSLog(@"Deleted");
-    }
-    
+
 }
 
 @end
