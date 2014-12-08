@@ -82,6 +82,8 @@
     cell.status.layer.masksToBounds = YES;
     cell.status.backgroundColor = [UIColor greenColor];//model.isOnCampus ? [UIColor greenColor] : [UIColor grayColor];
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     return cell;
 }
 
@@ -101,6 +103,17 @@
     params.picture = [NSURL URLWithString:@"http://i.imgur.com/g3Qc1HN.png"];
     params.linkDescription = @"Send links from your app using the iOS SDK.";
     params.friends = @[user[@"facebookID"]];
+    
+    PFUser *current = [PFUser currentUser];
+    PFObject *transaction = [PFObject objectWithClassName:@"Transaction"];
+    transaction[@"seller"] = user.objectId;
+    transaction[@"buyer"] = current.objectId;
+    transaction[@"location"] = current[@"meetLocation"];
+    
+    CGFloat discount = [user[@"discountRate"] floatValue];
+    CGFloat buyAmount = [current[@"buyAmount"] floatValue];
+    transaction[@"amount"] = [NSNumber numberWithFloat:buyAmount*(1 - discount/100.00)];
+    [transaction saveInBackground];
     
     // If the Facebook app is installed and we can present the share dialog
     if ([FBDialogs canPresentMessageDialogWithParams:params]) {

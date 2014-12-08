@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface SellerNotificationTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *image;
-@property (weak, nonatomic) IBOutlet UILabel *name;
-@property (weak, nonatomic) IBOutlet UILabel *foodAvailable;
-@property (weak, nonatomic) IBOutlet UILabel *discount;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageSeller;
+@property (weak, nonatomic) IBOutlet UIImageView *imageBuyer;
+@property (weak, nonatomic) IBOutlet UILabel *nameSeller;
+@property (weak, nonatomic) IBOutlet UILabel *labelPayment;
 
-@property (weak, nonatomic) IBOutlet UIView *status;
+@property (weak, nonatomic) IBOutlet UILabel *nameBuyer;
+@property (weak, nonatomic) IBOutlet UILabel *labelDate;
+@property (weak, nonatomic) IBOutlet UILabel *labelLocation;
+
 @end

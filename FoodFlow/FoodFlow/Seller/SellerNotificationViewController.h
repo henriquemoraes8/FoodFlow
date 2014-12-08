@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SellerNotificationViewController : UIViewController
+@interface SellerNotificationViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableNotifications;
 
 @end

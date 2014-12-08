@@ -21,5 +21,9 @@
 - (IBAction)fieldDiscountDismiss:(id)sender;
 - (IBAction)buttonSaveSettings:(id)sender;
 - (IBAction)logout:(id)sender;
+- (IBAction)foodAmountStartedEditing:(UITextField *)sender;
+- (IBAction)discountRateStartedEditing:(UITextField *)sender;
+
+
 
 @end

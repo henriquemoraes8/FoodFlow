@@ -19,8 +19,24 @@
 
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    PFUser *user = [PFUser currentUser];
+    
+    BOOL isSeller = [user[@"isSeller"] boolValue];
+    NSString *discountRate = user[@"discountRate"];
+    CGFloat amount = [user[@"sellAmount"] floatValue];
+    
+    if (discountRate)
+        _fieldDiscountRate.text = discountRate;
+    if (amount > 0)
+        _fieldAvailablePoints.text = [NSString stringWithFormat:@"%.2f", amount];
+    [_switchSeller setOn:isSeller];
+}
+
 - (IBAction)buttonSaveSettings:(id)sender {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+    
     NSNumber *amount = [formatter numberFromString:_fieldAvailablePoints.text];
     if (!amount) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Input not numerical" message:@"The food point amount is should be a numerical input" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -49,6 +65,14 @@
 - (IBAction)logout:(id)sender {
     [PFUser logOut];
     [[self navigationController] popToRootViewControllerAnimated:YES];
+}
+
+- (IBAction)foodAmountStartedEditing:(UITextField *)sender {
+    sender.text = @"";
+}
+
+- (IBAction)discountRateStartedEditing:(UITextField *)sender {
+    sender.text = @"";
 }
 
 -(IBAction)textFieldDismiss:(id)sender{
