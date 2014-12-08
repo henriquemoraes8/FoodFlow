@@ -69,6 +69,9 @@
 		5B0D2F3F1A1991B800B85421 /* BuyerInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D2F3E1A1991B800B85421 /* BuyerInfoViewController.m */; };
 		9249F5CC1A34FA80005E348C /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9249F5CB1A34FA80005E348C /* BackgroundLayer.m */; };
 		9249F5CE1A3502D4005E348C /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 9249F5CD1A3502D4005E348C /* bubble.png */; };
+		92BBC83B1A35285100748CDF /* fbpic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92BBC83A1A35285100748CDF /* fbpic.jpg */; };
+		92BBC83D1A3531EA00748CDF /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BBC83C1A3531E900748CDF /* Firebase.framework */; };
+		92BBC8401A353C8D00748CDF /* SellerNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BBC83F1A353C8D00748CDF /* SellerNotificationTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +164,10 @@
 		9249F5CA1A34FA80005E348C /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
 		9249F5CB1A34FA80005E348C /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
 		9249F5CD1A3502D4005E348C /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
+		92BBC83A1A35285100748CDF /* fbpic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fbpic.jpg; sourceTree = "<group>"; };
+		92BBC83C1A3531E900748CDF /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		92BBC83E1A353C8D00748CDF /* SellerNotificationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SellerNotificationTableViewCell.h; path = Seller/SellerNotificationTableViewCell.h; sourceTree = "<group>"; };
+		92BBC83F1A353C8D00748CDF /* SellerNotificationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SellerNotificationTableViewCell.m; path = Seller/SellerNotificationTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +194,7 @@
 				5B0D2B481A1938DE00B85421 /* Social.framework in Frameworks */,
 				5341ACE91A130E9100B48DF8 /* libstdc++.6.0.9.dylib in Frameworks */,
 				53FB7FF61A34192C00AE7119 /* ParseUI.framework in Frameworks */,
+				92BBC83D1A3531EA00748CDF /* Firebase.framework in Frameworks */,
 				5B0D2F2E1A193D0700B85421 /* FacebookSDK.framework in Frameworks */,
 				5341ACE71A130E6C00B48DF8 /* CoreText.framework in Frameworks */,
 				5341ACA01A130D6E00B48DF8 /* CoreGraphics.framework in Frameworks */,
@@ -231,6 +239,7 @@
 		5341AC9C1A130D6E00B48DF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92BBC83C1A3531E900748CDF /* Firebase.framework */,
 				53FB80071A341B8C00AE7119 /* SystemConfiguration.framework */,
 				53FB80051A341B7000AE7119 /* StoreKit.framework */,
 				53FB80031A341B6800AE7119 /* Security.framework */,
@@ -335,6 +344,7 @@
 				5B0D2F371A197D2700B85421 /* mypoints_icon.png */,
 				9249F5CD1A3502D4005E348C /* bubble.png */,
 				5B0D2F351A197C6800B85421 /* sell_icon.png */,
+				92BBC83A1A35285100748CDF /* fbpic.jpg */,
 				5B0D2F331A197A4800B85421 /* food_icon.png */,
 				5B0D2F2F1A1977B400B85421 /* settings_icon.png */,
 				5341AD051A14945900B48DF8 /* close2.png */,
@@ -402,6 +412,8 @@
 			children = (
 				5B0D2F3A1A19911F00B85421 /* SellerNotificationViewController.h */,
 				5B0D2F3B1A19911F00B85421 /* SellerNotificationViewController.m */,
+				92BBC83E1A353C8D00748CDF /* SellerNotificationTableViewCell.h */,
+				92BBC83F1A353C8D00748CDF /* SellerNotificationTableViewCell.m */,
 			);
 			name = Seller;
 			sourceTree = "<group>";
@@ -453,7 +465,11 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "FoodFlow Inc.";
 				TargetAttributes = {
+					5341AC991A130D6E00B48DF8 = {
+						DevelopmentTeam = JS2N93N49D;
+					};
 					5341ACBA1A130D6E00B48DF8 = {
+						DevelopmentTeam = JS2N93N49D;
 						TestTargetID = 5341AC991A130D6E00B48DF8;
 					};
 				};
@@ -485,6 +501,7 @@
 			files = (
 				5341AD001A14901000B48DF8 /* duke_univ_blue.png in Resources */,
 				5B0D2F301A1977B400B85421 /* settings_icon.png in Resources */,
+				92BBC83B1A35285100748CDF /* fbpic.jpg in Resources */,
 				5341AD061A14945900B48DF8 /* close2.png in Resources */,
 				5341ACB61A130D6E00B48DF8 /* Images.xcassets in Resources */,
 				5341ACA81A130D6E00B48DF8 /* InfoPlist.strings in Resources */,
@@ -525,6 +542,7 @@
 				53FB80101A3446E000AE7119 /* PurchaseInformationViewController.m in Sources */,
 				5341AD041A1491AC00B48DF8 /* ProfileViewController.m in Sources */,
 				5341ACDA1A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.m in Sources */,
+				92BBC8401A353C8D00748CDF /* SellerNotificationTableViewCell.m in Sources */,
 				5B0D2F3F1A1991B800B85421 /* BuyerInfoViewController.m in Sources */,
 				9249F5CC1A34FA80005E348C /* BackgroundLayer.m in Sources */,
 				5341ACF61A148BEE00B48DF8 /* LoginViewController.m in Sources */,
@@ -690,6 +708,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FoodFlow.app/FoodFlow";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -703,6 +723,7 @@
 				);
 				INFOPLIST_FILE = "FoodFlowTests/FoodFlowTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -712,6 +733,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FoodFlow.app/FoodFlow";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -721,6 +744,7 @@
 				GCC_PREFIX_HEADER = "FoodFlow/FoodFlow-Prefix.pch";
 				INFOPLIST_FILE = "FoodFlowTests/FoodFlowTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};

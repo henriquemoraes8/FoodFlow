@@ -198,7 +198,7 @@
 }
 
 - (void)populateLoggedOffInterface {
-    self.lblLoginStatus.text = @"you are logged out";
+    self.lblLoginStatus.text = @"You are logged out!";
     [self toggleHiddenState:YES];
 }
 

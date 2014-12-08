@@ -19,9 +19,6 @@
     return self;
 }
 
-- (void)viewDidLoad{
-}
-
 
 - (void)awakeFromNib
 {

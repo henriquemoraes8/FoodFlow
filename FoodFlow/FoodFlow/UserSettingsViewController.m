@@ -10,6 +10,14 @@
 #import "AppDelegate.h"
 
 @implementation UserSettingsViewController
+-(void) viewDidLoad {
+    [super viewDidLoad];
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+
+}
 
 - (IBAction)buttonSaveSettings:(id)sender {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -43,5 +51,9 @@
     [[self navigationController] popToRootViewControllerAnimated:YES];
 }
 
+-(IBAction)textFieldDismiss:(id)sender{
+    [self.fieldAvailablePoints resignFirstResponder];
+    [self.fieldDiscountRate resignFirstResponder];
+}
 
 @end
