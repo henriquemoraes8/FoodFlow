@@ -90,9 +90,11 @@
     // Check if the Facebook app is installed and we can present
     // the message dialog
     PFUser *user = users[indexPath.row];
+//    NSString *userstring =
+//    NSLog([NSString stringWithFormat:@"user is: %@", user.username]);
     
     FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
-    params.link =
+    //params.link =
     [NSURL URLWithString:@"https://developers.facebook.com/docs/ios/share/"];
     params.name = @"Message Dialog Tutorial";
     params.caption = @"Build great social apps that engage your friends.";

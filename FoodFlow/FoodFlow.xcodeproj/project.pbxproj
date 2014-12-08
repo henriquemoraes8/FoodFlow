@@ -277,8 +277,8 @@
 				53FB7FEB1A3414FF00AE7119 /* Categories */,
 				5341ACAC1A130D6E00B48DF8 /* AppDelegate.h */,
 				5341ACAD1A130D6E00B48DF8 /* AppDelegate.m */,
-				5341ACF01A13109B00B48DF8 /* Main.storyboard */,
 				5341ACB21A130D6E00B48DF8 /* ViewController.h */,
+				5341ACF01A13109B00B48DF8 /* Main.storyboard */,
 				5341ACB31A130D6E00B48DF8 /* ViewController.m */,
 				5341ACB51A130D6E00B48DF8 /* Images.xcassets */,
 				5341ACF41A148BEE00B48DF8 /* LoginViewController.h */,
@@ -341,7 +341,6 @@
 		5341ACDC1A130DBE00B48DF8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				5BD1A6241A354C5C00A426C2 /* fficon_@2x.png */,
 				5B0D2F371A197D2700B85421 /* mypoints_icon.png */,
 				9249F5CD1A3502D4005E348C /* bubble.png */,
 				5B0D2F351A197C6800B85421 /* sell_icon.png */,
@@ -515,7 +514,6 @@
 				5B0D2F361A197C6800B85421 /* sell_icon.png in Resources */,
 				5341ACE01A130DCB00B48DF8 /* dataReferencia.png in Resources */,
 				5B0D2F341A197A4800B85421 /* food_icon.png in Resources */,
-				5BD1A6251A354C5C00A426C2 /* fficon_@2x.png in Resources */,
 				5341ACFE1A148EF400B48DF8 /* checkConfirma.png in Resources */,
 				5B0D2F381A197D2700B85421 /* mypoints_icon.png in Resources */,
 				9249F5CE1A3502D4005E348C /* bubble.png in Resources */,
