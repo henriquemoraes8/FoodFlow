@@ -14,8 +14,7 @@
 #import "NSBubbleData.h"
 
 
-@interface ChatViewController : UIViewController
+@interface ChatViewController : UIViewController<UIBubbleTableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UITableView *chatlist;
 -(void) setDestinationUser:(PFUser *) user;
 @end

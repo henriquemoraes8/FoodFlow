@@ -76,7 +76,7 @@
 
 -(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user{
     NSLog(@"%@", user);
-    self.profilePicture.profileID = user.id;
+    self.profilePicture.profileID = user.objectID;
     //self.lblUsername.text = user.name;
     NSString *status = @"You are logged in as ";
     self.lblLoginStatus.text = [status stringByAppendingString: user.name];

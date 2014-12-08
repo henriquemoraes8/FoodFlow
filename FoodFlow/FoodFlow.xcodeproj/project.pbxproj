@@ -182,6 +182,16 @@
 		92DFABBB1A364AF900858C47 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92DFABBA1A364AF900858C47 /* MainStoryboard.storyboard */; };
 		92DFABBE1A36565F00858C47 /* avatar1.png in Resources */ = {isa = PBXBuildFile; fileRef = 92DFABBC1A36565F00858C47 /* avatar1.png */; };
 		92DFABBF1A36565F00858C47 /* halloween.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92DFABBD1A36565F00858C47 /* halloween.jpg */; };
+		92DFB4B41A3660430094F16B /* bubbleMine.png in Resources */ = {isa = PBXBuildFile; fileRef = 92DFB4AA1A3660430094F16B /* bubbleMine.png */; };
+		92DFB4B51A3660430094F16B /* bubbleMine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92DFB4AB1A3660430094F16B /* bubbleMine@2x.png */; };
+		92DFB4B61A3660430094F16B /* bubbleSomeone.png in Resources */ = {isa = PBXBuildFile; fileRef = 92DFB4AC1A3660430094F16B /* bubbleSomeone.png */; };
+		92DFB4B71A3660430094F16B /* bubbleSomeone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92DFB4AD1A3660430094F16B /* bubbleSomeone@2x.png */; };
+		92DFB4B81A3660430094F16B /* missingAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 92DFB4AE1A3660430094F16B /* missingAvatar.png */; };
+		92DFB4B91A3660430094F16B /* missingAvatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92DFB4AF1A3660430094F16B /* missingAvatar@2x.png */; };
+		92DFB4BA1A3660430094F16B /* typingMine.png in Resources */ = {isa = PBXBuildFile; fileRef = 92DFB4B01A3660430094F16B /* typingMine.png */; };
+		92DFB4BB1A3660430094F16B /* typingMine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92DFB4B11A3660430094F16B /* typingMine@2x.png */; };
+		92DFB4BC1A3660430094F16B /* typingSomeone.png in Resources */ = {isa = PBXBuildFile; fileRef = 92DFB4B21A3660430094F16B /* typingSomeone.png */; };
+		92DFB4BD1A3660430094F16B /* typingSomeone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92DFB4B31A3660430094F16B /* typingSomeone@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -561,6 +571,16 @@
 		92DFABBA1A364AF900858C47 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		92DFABBC1A36565F00858C47 /* avatar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar1.png; sourceTree = "<group>"; };
 		92DFABBD1A36565F00858C47 /* halloween.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween.jpg; sourceTree = "<group>"; };
+		92DFB4AA1A3660430094F16B /* bubbleMine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubbleMine.png; sourceTree = "<group>"; };
+		92DFB4AB1A3660430094F16B /* bubbleMine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubbleMine@2x.png"; sourceTree = "<group>"; };
+		92DFB4AC1A3660430094F16B /* bubbleSomeone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubbleSomeone.png; sourceTree = "<group>"; };
+		92DFB4AD1A3660430094F16B /* bubbleSomeone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubbleSomeone@2x.png"; sourceTree = "<group>"; };
+		92DFB4AE1A3660430094F16B /* missingAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missingAvatar.png; sourceTree = "<group>"; };
+		92DFB4AF1A3660430094F16B /* missingAvatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "missingAvatar@2x.png"; sourceTree = "<group>"; };
+		92DFB4B01A3660430094F16B /* typingMine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = typingMine.png; sourceTree = "<group>"; };
+		92DFB4B11A3660430094F16B /* typingMine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "typingMine@2x.png"; sourceTree = "<group>"; };
+		92DFB4B21A3660430094F16B /* typingSomeone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = typingSomeone.png; sourceTree = "<group>"; };
+		92DFB4B31A3660430094F16B /* typingSomeone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "typingSomeone@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -737,6 +757,16 @@
 			isa = PBXGroup;
 			children = (
 				92DFABBC1A36565F00858C47 /* avatar1.png */,
+				92DFB4AA1A3660430094F16B /* bubbleMine.png */,
+				92DFB4AB1A3660430094F16B /* bubbleMine@2x.png */,
+				92DFB4AC1A3660430094F16B /* bubbleSomeone.png */,
+				92DFB4AD1A3660430094F16B /* bubbleSomeone@2x.png */,
+				92DFB4AE1A3660430094F16B /* missingAvatar.png */,
+				92DFB4AF1A3660430094F16B /* missingAvatar@2x.png */,
+				92DFB4B01A3660430094F16B /* typingMine.png */,
+				92DFB4B11A3660430094F16B /* typingMine@2x.png */,
+				92DFB4B21A3660430094F16B /* typingSomeone.png */,
+				92DFB4B31A3660430094F16B /* typingSomeone@2x.png */,
 				92DFABBD1A36565F00858C47 /* halloween.jpg */,
 				5B0D2F371A197D2700B85421 /* mypoints_icon.png */,
 				9249F5CD1A3502D4005E348C /* bubble.png */,
@@ -1312,24 +1342,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				5341AD001A14901000B48DF8 /* duke_univ_blue.png in Resources */,
+				92DFB4BC1A3660430094F16B /* typingSomeone.png in Resources */,
 				92DFABBF1A36565F00858C47 /* halloween.jpg in Resources */,
+				92DFB4BD1A3660430094F16B /* typingSomeone@2x.png in Resources */,
 				5B0D2F301A1977B400B85421 /* settings_icon.png in Resources */,
 				92BBC83B1A35285100748CDF /* fbpic.jpg in Resources */,
 				5341AD061A14945900B48DF8 /* close2.png in Resources */,
 				5341ACB61A130D6E00B48DF8 /* Images.xcassets in Resources */,
+				92DFB4B61A3660430094F16B /* bubbleSomeone.png in Resources */,
 				5341ACA81A130D6E00B48DF8 /* InfoPlist.strings in Resources */,
 				5341ACFA1A148D0700B48DF8 /* 7292_duke_blue_devils-partial-1978.png in Resources */,
+				92DFB4B51A3660430094F16B /* bubbleMine@2x.png in Resources */,
+				92DFB4B41A3660430094F16B /* bubbleMine.png in Resources */,
 				5341ACFC1A148E6900B48DF8 /* facebook-connect.png in Resources */,
 				5341ACE11A130DCB00B48DF8 /* dataAgenda.png in Resources */,
+				92DFB4BA1A3660430094F16B /* typingMine.png in Resources */,
 				92DFABBB1A364AF900858C47 /* MainStoryboard.storyboard in Resources */,
 				5341ACF81A148C9700B48DF8 /* food-50.png in Resources */,
 				5341ACE21A130DCB00B48DF8 /* img-data-prazo.png in Resources */,
+				92DFB4B91A3660430094F16B /* missingAvatar@2x.png in Resources */,
 				5B0D2F361A197C6800B85421 /* sell_icon.png in Resources */,
 				92DFABB11A36459C00858C47 /* PNLoggerSymbols.plist in Resources */,
 				92DFABBE1A36565F00858C47 /* avatar1.png in Resources */,
 				5341ACE01A130DCB00B48DF8 /* dataReferencia.png in Resources */,
+				92DFB4B71A3660430094F16B /* bubbleSomeone@2x.png in Resources */,
+				92DFB4B81A3660430094F16B /* missingAvatar.png in Resources */,
 				5B0D2F341A197A4800B85421 /* food_icon.png in Resources */,
 				5341ACFE1A148EF400B48DF8 /* checkConfirma.png in Resources */,
+				92DFB4BB1A3660430094F16B /* typingMine@2x.png in Resources */,
 				5B0D2F381A197D2700B85421 /* mypoints_icon.png in Resources */,
 				9249F5CE1A3502D4005E348C /* bubble.png in Resources */,
 			);
