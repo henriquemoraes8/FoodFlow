@@ -27,7 +27,6 @@
     IBOutlet UITextField *textField;
     
     NSMutableArray *bubbleData;
-    NSMutableArray *PFMessages;
 }
 @end
 
@@ -38,7 +37,7 @@
     [super viewDidLoad];
     
     currentUser = [PFUser currentUser];
-    PFMessages = [NSMutableArray new];
+    bubbleData = [NSMutableArray new];
     currentChannel = [PNChannel channelWithName:currentUser.objectId];
     //[PubNub subscribeOnChannel:currentChannel];
 
@@ -53,8 +52,6 @@
     currentChannel = [PNChannel channelWithName:currentUser.objectId];
     NSLog(@"Target channel is: %@\n\n", destinationUser.objectId);
     
-    
-    bubbleData = [[NSMutableArray alloc] initWithObjects:nil];
     bubbleTable.bubbleDataSource = self;
     
     [[PNObservationCenter defaultCenter] addMessageReceiveObserver:self withBlock:^(PNMessage *message) {
@@ -102,8 +99,10 @@
 - (void)loadConversationAndMessages {
     PFQuery *query1 = [PFQuery queryWithClassName:@"Conversation"];
     [query1 whereKey:@"person1" equalTo:currentUser.objectId];
+    [query1 whereKey:@"person2" equalTo:destinationUser.objectId];
     PFQuery *query2 = [PFQuery queryWithClassName:@"Conversation"];
     [query2 whereKey:@"person2" equalTo:currentUser.objectId];
+    [query2 whereKey:@"person1" equalTo:destinationUser.objectId];
     PFQuery *orQuery = [PFQuery orQueryWithSubqueries:@[query1,query2]];
     [orQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (objects.count > 0) {
@@ -116,12 +115,21 @@
 - (void)loadPFMessages {
     PFQuery *sender = [PFQuery queryWithClassName:@"PFMessage"];
     [sender whereKey:@"senderID" equalTo:currentUser.objectId];
+    [sender whereKey:@"receiveID" equalTo:destinationUser.objectId];
     PFQuery *receiver = [PFQuery queryWithClassName:@"PFMessage"];
     [receiver whereKey:@"receiveID" equalTo:currentUser.objectId];
+    [receiver whereKey:@"senderID" equalTo:destinationUser.objectId];
     PFQuery *orQuery = [PFQuery orQueryWithSubqueries:@[sender,receiver]];
     [orQuery orderByDescending:@"createdAt"];
     [orQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        PFMessages = [[NSMutableArray alloc] initWithArray:objects];
+        for (PFObject *message in objects) {
+            BOOL iSent = [message[@"senderID"] isEqualToString:currentUser.objectId];
+            NSBubbleData *bubble = [NSBubbleData dataWithText:message[@"content"] date:message.createdAt type:iSent ? BubbleTypeMine : BubbleTypeSomeoneElse];
+            
+            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:iSent ? currentUser[@"image"] : destinationUser[@"image"]]]];
+            bubble.avatar = image;
+            [bubbleData addObject:bubble];
+        }
         [bubbleTable reloadData];
     }];
 }
@@ -154,7 +162,6 @@
 
     [bubbleData addObject:sayBubble];
     [bubbleTable reloadData];
-    
     
     PFObject *PFmessage = [PFObject objectWithClassName: @"PFMessage"];
     PFmessage[@"content"] = textField.text;

@@ -8,6 +8,7 @@
 
 #import "ChatListViewController.h"
 #import "ChatListViewCell.h"
+#import "ChatViewController.h"
 
 @implementation ChatListViewController
 {
@@ -50,7 +51,22 @@
         cell.namePerson.text = object[@"name"];
     }];
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PFUser *user = [PFUser currentUser];
+    PFObject *message = conversations[indexPath.row];
+    NSString *personID = [message[@"person1"] isEqualToString:user.objectId] ? message[@"person2"] : message[@"person1"];
+    
+    PFQuery *queryPerson = [PFUser query];
+    [queryPerson getObjectInBackgroundWithId:personID block:^(PFObject *object, NSError *error) {
+        ChatViewController *chat = [self.storyboard instantiateViewControllerWithIdentifier:@"ChatViewController"];
+        [chat setDestinationUser:(PFUser*)object];
+        [self.navigationController pushViewController: chat animated:YES];
+    }];
 }
 
 @end
