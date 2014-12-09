@@ -65,6 +65,7 @@
 		5B0D2F361A197C6800B85421 /* sell_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0D2F351A197C6800B85421 /* sell_icon.png */; };
 		5B0D2F381A197D2700B85421 /* mypoints_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0D2F371A197D2700B85421 /* mypoints_icon.png */; };
 		5B0D2F3C1A19911F00B85421 /* SellerNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D2F3B1A19911F00B85421 /* SellerNotificationViewController.m */; };
+		5B11FAEA1A36DC9C00BC5B66 /* notification_warning.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B11FAE91A36DC9C00BC5B66 /* notification_warning.png */; };
 		9249F5CC1A34FA80005E348C /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9249F5CB1A34FA80005E348C /* BackgroundLayer.m */; };
 		9249F5CE1A3502D4005E348C /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 9249F5CD1A3502D4005E348C /* bubble.png */; };
 		92BBC83B1A35285100748CDF /* fbpic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92BBC83A1A35285100748CDF /* fbpic.jpg */; };
@@ -278,6 +279,7 @@
 		5B0D2F371A197D2700B85421 /* mypoints_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mypoints_icon.png; path = images/mypoints_icon.png; sourceTree = "<group>"; };
 		5B0D2F3A1A19911F00B85421 /* SellerNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SellerNotificationViewController.h; path = Seller/SellerNotificationViewController.h; sourceTree = "<group>"; };
 		5B0D2F3B1A19911F00B85421 /* SellerNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SellerNotificationViewController.m; path = Seller/SellerNotificationViewController.m; sourceTree = "<group>"; };
+		5B11FAE91A36DC9C00BC5B66 /* notification_warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notification_warning.png; sourceTree = "<group>"; };
 		9249F5CA1A34FA80005E348C /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
 		9249F5CB1A34FA80005E348C /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
 		9249F5CD1A3502D4005E348C /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
@@ -754,6 +756,7 @@
 		5341ACDC1A130DBE00B48DF8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				5B11FAE91A36DC9C00BC5B66 /* notification_warning.png */,
 				92DFABBC1A36565F00858C47 /* avatar1.png */,
 				92DFB4AA1A3660430094F16B /* bubbleMine.png */,
 				92DFB4AB1A3660430094F16B /* bubbleMine@2x.png */,
@@ -1364,6 +1367,7 @@
 				5B0D2F301A1977B400B85421 /* settings_icon.png in Resources */,
 				92BBC83B1A35285100748CDF /* fbpic.jpg in Resources */,
 				5341AD061A14945900B48DF8 /* close2.png in Resources */,
+				5B11FAEA1A36DC9C00BC5B66 /* notification_warning.png in Resources */,
 				5341ACB61A130D6E00B48DF8 /* Images.xcassets in Resources */,
 				92DFB4B61A3660430094F16B /* bubbleSomeone.png in Resources */,
 				5341ACA81A130D6E00B48DF8 /* InfoPlist.strings in Resources */,
