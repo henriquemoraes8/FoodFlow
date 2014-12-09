@@ -41,8 +41,6 @@
     bubbleData = [NSMutableArray new];
     currentChannel = [PNChannel channelWithName:currentUser.objectId];
     //[PubNub subscribeOnChannel:currentChannel];
-    
-    [self sendDefaultMessage];
 
     self.navigationItem.title = [NSString stringWithFormat:@"Chat with %@", destinationUser[@"name"]];
     currentProfilePic = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:currentUser[@"image"]]]];
@@ -133,9 +131,7 @@
             bubble.avatar = image;
             [bubbleData addObject:bubble];
         }
-        [bubbleTable reloadData];
-        [bubbleTable layoutIfNeeded];
-        [bubbleTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[bubbleTable numberOfRowsInSection:[bubbleTable numberOfSections]-1]-1 inSection:[bubbleTable numberOfSections]-1] atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        [self sendDefaultMessage];
     }];
 }
 
@@ -156,32 +152,35 @@
 
 -(void) sendDefaultMessage{
     if ([defaultMsgSwitch isEqualToString:@"on"]){
-    NSString* amount = currentUser[@"buyAmount"];
-    NSString* location = currentUser[@"meetLocation"];
-    
-    NSString* msg = [NSString stringWithFormat:@"Hi %@! I wish to buy %@ food points from you at %@. Would you be available to meet?", destinationUser[@"name"], amount, location ];
-    targetChannel = [PNChannel channelWithName:destinationUser.objectId shouldObservePresence:YES];
-bubbleTable.typingBubble = NSBubbleTypingTypeNobody;
+        NSString* amount = currentUser[@"buyAmount"];
+        NSString* location = currentUser[@"meetLocation"];
+        
+        NSString* msg = [NSString stringWithFormat:@"Hi %@! I wish to buy %@ food points from you at %@. Would you be available to meet?", destinationUser[@"name"], amount, location ];
+            
+            currentConversation[@"lastMessage"] = msg;
+            [currentConversation saveInBackground];
+            
+        targetChannel = [PNChannel channelWithName:destinationUser.objectId shouldObservePresence:YES];
+        bubbleTable.typingBubble = NSBubbleTypingTypeNobody;
 
-NSBubbleData *sayBubble = [NSBubbleData dataWithText:msg date:[NSDate dateWithTimeIntervalSinceNow:0] type:BubbleTypeMine];
-sayBubble.avatar = currentProfilePic;
-//
-//[bubbleData addObject:sayBubble];
-//[bubbleTable reloadData];
+        NSBubbleData *sayBubble = [NSBubbleData dataWithText:msg date:[NSDate dateWithTimeIntervalSinceNow:0] type:BubbleTypeMine];
+        sayBubble.avatar = currentProfilePic;
+        //
+        [bubbleData addObject:sayBubble];
+        [bubbleTable reloadData];
 
-PFObject *PFmessage = [PFObject objectWithClassName: @"PFMessage"];
-    PFmessage[@"content"] = msg;
-PFmessage[@"senderID"] = currentUser.objectId;
-PFmessage[@"receiveID"] = destinationUser.objectId;
-PFmessage[@"isSeen"] = @"false";
-[PFmessage saveEventually];
-
-//currentConversation[@"lastMessage"] = msg;
-//[currentConversation saveInBackground];
+        PFObject *PFmessage = [PFObject objectWithClassName: @"PFMessage"];
+            PFmessage[@"content"] = msg;
+        PFmessage[@"senderID"] = currentUser.objectId;
+        PFmessage[@"receiveID"] = destinationUser.objectId;
+        PFmessage[@"isSeen"] = @"false";
+        [PFmessage saveEventually];
 
         [PubNub sendMessage:@{@"message":msg,@"sender":currentUser.objectId} toChannel:targetChannel];
-}
-
+    }
+    [bubbleTable reloadData];
+    [bubbleTable layoutIfNeeded];
+    [bubbleTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[bubbleTable numberOfRowsInSection:[bubbleTable numberOfSections]-1]-1 inSection:[bubbleTable numberOfSections]-1] atScrollPosition:UITableViewScrollPositionNone animated:YES];
 }
 
 
