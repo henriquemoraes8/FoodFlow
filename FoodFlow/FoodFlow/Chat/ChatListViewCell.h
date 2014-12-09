@@ -9,12 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface ChatListViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *imageSeller;
-@property (weak, nonatomic) IBOutlet UIImageView *imageBuyer;
-@property (weak, nonatomic) IBOutlet UILabel *nameSeller;
-@property (weak, nonatomic) IBOutlet UILabel *labelPayment;
 
-@property (weak, nonatomic) IBOutlet UILabel *nameBuyer;
+@property (weak, nonatomic) IBOutlet UIImageView *imagePerson;
+@property (weak, nonatomic) IBOutlet UILabel *namePerson;
+@property (weak, nonatomic) IBOutlet UILabel *labelMessage;
 @property (weak, nonatomic) IBOutlet UILabel *labelDate;
-@property (weak, nonatomic) IBOutlet UILabel *labelLocation;
+
+
 @end

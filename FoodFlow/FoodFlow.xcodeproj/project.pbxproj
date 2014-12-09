@@ -65,7 +65,6 @@
 		5B0D2F361A197C6800B85421 /* sell_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0D2F351A197C6800B85421 /* sell_icon.png */; };
 		5B0D2F381A197D2700B85421 /* mypoints_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0D2F371A197D2700B85421 /* mypoints_icon.png */; };
 		5B0D2F3C1A19911F00B85421 /* SellerNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D2F3B1A19911F00B85421 /* SellerNotificationViewController.m */; };
-		5B0D2F3F1A1991B800B85421 /* BuyerInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D2F3E1A1991B800B85421 /* BuyerInfoViewController.m */; };
 		9249F5CC1A34FA80005E348C /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9249F5CB1A34FA80005E348C /* BackgroundLayer.m */; };
 		9249F5CE1A3502D4005E348C /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 9249F5CD1A3502D4005E348C /* bubble.png */; };
 		92BBC83B1A35285100748CDF /* fbpic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92BBC83A1A35285100748CDF /* fbpic.jpg */; };
@@ -279,8 +278,6 @@
 		5B0D2F371A197D2700B85421 /* mypoints_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mypoints_icon.png; path = images/mypoints_icon.png; sourceTree = "<group>"; };
 		5B0D2F3A1A19911F00B85421 /* SellerNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SellerNotificationViewController.h; path = Seller/SellerNotificationViewController.h; sourceTree = "<group>"; };
 		5B0D2F3B1A19911F00B85421 /* SellerNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SellerNotificationViewController.m; path = Seller/SellerNotificationViewController.m; sourceTree = "<group>"; };
-		5B0D2F3D1A1991B800B85421 /* BuyerInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyerInfoViewController.h; path = Buyer/BuyerInfoViewController.h; sourceTree = "<group>"; };
-		5B0D2F3E1A1991B800B85421 /* BuyerInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuyerInfoViewController.m; path = Buyer/BuyerInfoViewController.m; sourceTree = "<group>"; };
 		9249F5CA1A34FA80005E348C /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
 		9249F5CB1A34FA80005E348C /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
 		9249F5CD1A3502D4005E348C /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
@@ -748,8 +745,6 @@
 			children = (
 				5341ACD51A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.h */,
 				5341ACD61A130DAB00B48DF8 /* FoodAdvertisementTableViewCell.m */,
-				5B0D2F3D1A1991B800B85421 /* BuyerInfoViewController.h */,
-				5B0D2F3E1A1991B800B85421 /* BuyerInfoViewController.m */,
 				5341ACD31A130DAB00B48DF8 /* FoodPointAdvertisementViewController.h */,
 				5341ACD41A130DAB00B48DF8 /* FoodPointAdvertisementViewController.m */,
 			);
@@ -837,6 +832,15 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		53FB80151A36BC8D00AE7119 /* Chat List */ = {
+			isa = PBXGroup;
+			children = (
+				92BBC8651A3570C700748CDF /* ChatListViewController.h */,
+				92BBC8661A3570C700748CDF /* ChatListViewController.m */,
+			);
+			name = "Chat List";
+			sourceTree = "<group>";
+		};
 		5B0D2F391A1990C300B85421 /* Seller */ = {
 			isa = PBXGroup;
 			children = (
@@ -851,6 +855,7 @@
 		92BBC8411A356BF200748CDF /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				53FB80151A36BC8D00AE7119 /* Chat List */,
 				92BBC8551A356D6B00748CDF /* NSBubbleData.h */,
 				92BBC8561A356D6B00748CDF /* NSBubbleData.m */,
 				92BBC8571A356D6B00748CDF /* UIBubbleHeaderTableViewCell.h */,
@@ -864,8 +869,6 @@
 				92BBC85F1A356D6B00748CDF /* UIBubbleTypingTableViewCell.m */,
 				92BBC8521A356D2000748CDF /* ChatViewController.h */,
 				92BBC8531A356D2000748CDF /* ChatViewController.m */,
-				92BBC8651A3570C700748CDF /* ChatListViewController.h */,
-				92BBC8661A3570C700748CDF /* ChatListViewController.m */,
 				92CC463A1A36B6C300F81290 /* ChatListViewCell.h */,
 				92CC463B1A36B6C300F81290 /* ChatListViewCell.m */,
 			);
@@ -1458,7 +1461,6 @@
 				92DFAB8F1A36459C00858C47 /* NSObject+PNAdditions.m in Sources */,
 				92DFAB8E1A36459C00858C47 /* NSMutableSet+PNAdditions.m in Sources */,
 				92DFAB5B1A36459C00858C47 /* PNChannel.m in Sources */,
-				5B0D2F3F1A1991B800B85421 /* BuyerInfoViewController.m in Sources */,
 				92DFAB991A36459C00858C47 /* PNChannelGroupRemoveRequest.m in Sources */,
 				92BBC8671A3570C700748CDF /* ChatListViewController.m in Sources */,
 				92DFAB501A36459C00858C47 /* PubNub+Cipher.m in Sources */,

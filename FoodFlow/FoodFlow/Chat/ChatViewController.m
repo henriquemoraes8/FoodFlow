@@ -149,6 +149,7 @@
     [bubbleData addObject:sayBubble];
     [bubbleTable reloadData];
     [PubNub sendMessage:@{@"message":textField.text,@"sender":currentUser.objectId} toChannel:targetChannel];
+    
     textField.text = @"";
     [textField resignFirstResponder];
 }

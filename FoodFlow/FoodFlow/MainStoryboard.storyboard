@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="odO-Bu-mom">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="odO-Bu-mom">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--Purchase Information-->
@@ -220,12 +220,12 @@
         <scene sceneID="zXX-ye-jeg">
             <objects>
                 <viewController storyboardIdentifier="ChatListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oOT-7h-iF7" customClass="ChatListViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bNs-Q0-xvk">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="59" sectionHeaderHeight="22" sectionFooterHeight="22" id="bNs-Q0-xvk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="91" id="MzJ-L1-3Dy" customClass="ChatListViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="59" id="MzJ-L1-3Dy" customClass="ChatListViewCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MzJ-L1-3Dy" id="HKD-lz-hhy">
@@ -248,24 +248,47 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name last name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Ed-LJ-TDk">
-                                            <rect key="frame" x="4" y="50" width="50" height="34.5"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name last name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Ed-LJ-TDk">
+                                            <rect key="frame" x="58" y="7" width="130" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="11"/>
                                             <color key="textColor" red="0.0" green="0.33725490200000002" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue, 99 Aug HH:mm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p8v-GP-cWF">
+                                            <rect key="frame" x="196" y="3" width="116" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="10"/>
+                                            <color key="textColor" red="0.0" green="0.33725490200000002" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hey I was wondering if you could come to abp to sell me some food points" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="51Q-Ub-GUW">
+                                            <rect key="frame" x="58" y="26" width="259" height="31.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="11"/>
+                                            <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.74509803919999995" green="0.91372549020000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imageSeller" destination="okX-it-k5b" id="758-5Q-rAM"/>
-                                    <outlet property="nameSeller" destination="1Ed-LJ-TDk" id="ZH2-Pk-sAb"/>
+                                    <outlet property="imagePerson" destination="okX-it-k5b" id="CYd-8I-ivj"/>
+                                    <outlet property="labelDate" destination="p8v-GP-cWF" id="Ms9-O1-LjA"/>
+                                    <outlet property="labelMessage" destination="51Q-Ub-GUW" id="OY1-6q-Hiv"/>
+                                    <outlet property="namePerson" destination="1Ed-LJ-TDk" id="X9S-EZ-C6S"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oOT-7h-iF7" id="2dh-fq-O4A"/>
+                            <outlet property="delegate" destination="oOT-7h-iF7" id="E9w-bd-qG6"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ChatList" id="7iG-bt-dmM"/>
+                    <connections>
+                        <outlet property="tableChats" destination="bNs-Q0-xvk" id="VaD-FT-euB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQk-dP-kFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -669,7 +692,7 @@
         <!--Chats-->
         <scene sceneID="2bW-XL-vZG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RdA-9Z-r8d" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Chat" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RdA-9Z-r8d" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Chats" image="bubble.png" id="AyF-8l-5yj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AMH-Ol-5m2">

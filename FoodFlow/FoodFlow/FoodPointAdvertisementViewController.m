@@ -105,11 +105,31 @@
     CGFloat buyAmount = [current[@"buyAmount"] floatValue];
     transaction[@"amount"] = [NSNumber numberWithFloat:buyAmount*(1 - discount/100.00)];
     [transaction saveInBackground];
-    ChatListViewController *chatListViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ChatListViewController"];
-    UIViewController *chat = [chatListViewController getChatViewController:user];
-    [self.navigationController pushViewController: chat animated:YES];
-    //[self performSegueWithIdentifier:@"chatSegue" sender:self];
     
+    [self recordConversationWithUser:user];
+    
+    ChatViewController *chat = [self.storyboard instantiateViewControllerWithIdentifier:@"Chat"];
+    [chat setDestinationUser:user];
+    [self.navigationController pushViewController: chat animated:YES];
+}
+
+- (void)recordConversationWithUser:(PFUser*)user {
+    PFUser *current = [PFUser currentUser];
+    PFQuery *query1 = [PFQuery queryWithClassName:@"Conversation"];
+    [query1 whereKey:@"person2" equalTo:current.objectId];
+    [query1 whereKey:@"person1" equalTo:user.objectId];
+    PFQuery *query2 = [PFQuery queryWithClassName:@"Conversation"];
+    [query2 whereKey:@"person2" equalTo:user.objectId];
+    [query2 whereKey:@"person1" equalTo:current.objectId];
+    PFQuery *orQuery = [PFQuery orQueryWithSubqueries:@[query1,query2]];
+    [orQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (objects.count == 0) {
+            PFObject *conversation = [PFObject objectWithClassName:@"Conversation"];
+            conversation[@"person1"] = current.objectId;
+            conversation[@"person2"] = user.objectId;
+            conversation[@"lastMessage"] = @"";
+        }
+    }];
 }
 
 
