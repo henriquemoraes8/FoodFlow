@@ -254,6 +254,9 @@
                                 <state key="normal" title="Send">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sayPressed:" destination="oGT-Fb-Muw" eventType="touchUpInside" id="8z6-GU-1nw"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="JWI-5C-oO9">
                                 <rect key="frame" x="10" y="485" width="255" height="30"/>
@@ -490,6 +493,7 @@
                     <tabBarItem key="tabBarItem" title="Buy" image="food_icon.png" id="zq7-tF-V8Z"/>
                     <navigationItem key="navigationItem" title="Available Sellers" id="vWR-FZ-1tr"/>
                     <connections>
+                        <outlet property="tableAnnouncements" destination="1Fh-2I-GOb" id="14n-8d-8PK"/>
                         <segue destination="oGT-Fb-Muw" kind="push" identifier="chatSegue" id="r4E-fB-eTo"/>
                     </connections>
                 </viewController>

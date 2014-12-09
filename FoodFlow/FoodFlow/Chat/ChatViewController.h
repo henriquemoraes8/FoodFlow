@@ -17,4 +17,8 @@
 @interface ChatViewController : UIViewController<UIBubbleTableViewDataSource>
 
 -(void) setDestinationUser:(PFUser *) user;
+//@property (weak, nonatomic) PFUser* destinationUser;
+
+
+
 @end

@@ -21,8 +21,35 @@
     [PFFacebookUtils initializeFacebook];
     [PubNub setDelegate:self]; // Add This Line
 
+    // #1 Define client configuration
+    PNConfiguration *myConfig = [PNConfiguration configurationForOrigin:@"pubsub.pubnub.com"
+                                                             publishKey:@"pub-c-ce22dcca-bf1f-4886-9d51-689155232984"
+                                                           subscribeKey:@"sub-c-f5e6aa62-7f0b-11e4-812f-02ee2ddab7fe"
+                                                              secretKey:nil];
+    // #2 make the configuration active
+    [PubNub setConfiguration:myConfig];
+    // #3 Connect to the PubNub
+    [PubNub connect];
+    
+    // #4 Add observer to look for connection events
+    [[PNObservationCenter defaultCenter] addClientConnectionStateObserver:self withCallbackBlock:^(NSString *origin, BOOL connected, PNError *connectionError){
+        if (connected)
+        {
+            NSLog(@"OBSERVER: Successful Connection!");
+        }
+        else if (!connected || connectionError)
+        {
+            NSLog(@"OBSERVER: Error %@, Connection Failed!", connectionError.localizedDescription);
+        }
+    }];
     return YES;
 }
+
+//(In AppDelegate.m, define didReceiveMessage delegate method:)
+- (void)pubnubClient:(PubNub *)client didReceiveMessage:(PNMessage *)message {
+    NSLog(@"Received: %@", message.message);
+}
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

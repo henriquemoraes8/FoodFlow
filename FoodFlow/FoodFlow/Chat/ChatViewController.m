@@ -7,12 +7,18 @@
 //
 
 #import "ChatViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 
 
 @interface ChatViewController()
 {
-    PFUser *destinationUser;
+    PFUser* destinationUser;
+    PNChannel* targetChannel;
+    PNChannel* currentChannel;
+    
+    UIImage * currentProfilePic;
+
     IBOutlet UIBubbleTableView *bubbleTable;
     IBOutlet UIView *textInputView;
     IBOutlet UITextField *textField;
@@ -28,38 +34,38 @@
 {
     [super viewDidLoad];
     
-    // #1 Define client configuration
-    PNConfiguration *myConfig = [PNConfiguration configurationForOrigin:@"pubsub.pubnub.com"
-                                                             publishKey:@"pub-c-ce22dcca-bf1f-4886-9d51-689155232984"
-                                                           subscribeKey:@"sub-c-f5e6aa62-7f0b-11e4-812f-02ee2ddab7fe"
-                                                              secretKey:nil];
-    // #2 make the configuration active
-    [PubNub setConfiguration:myConfig];
-    // #3 Connect to the PubNub
-    [PubNub connect];
+    PFUser *current_user = [PFUser currentUser];
     
-    // #4 Add observer to look for connection events
-    [[PNObservationCenter defaultCenter] addClientConnectionStateObserver:self withCallbackBlock:^(NSString *origin, BOOL connected, PNError *connectionError){
-        if (connected)
-        {
-            NSLog(@"OBSERVER: Successful Connection!");
-        }
-        else if (!connected || connectionError)
-        {
-            NSLog(@"OBSERVER: Error %@, Connection Failed!", connectionError.localizedDescription);
-        }
-    }];
+    NSString *current_userid = current_user.username;
+    NSString *target_userid = destinationUser.username;
+    currentProfilePic = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:current_user[@"image"]]]];
+   
+    UIImage *target_profile = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:destinationUser[@"image"]]]];
     
-    NSBubbleData *heyBubble = [NSBubbleData dataWithText:@"Hey, halloween is soon" date:[NSDate dateWithTimeIntervalSinceNow:-300] type:BubbleTypeSomeoneElse];
-    heyBubble.avatar = [UIImage imageNamed:@"avatar1.png"];
     
-    NSBubbleData *photoBubble = [NSBubbleData dataWithImage:[UIImage imageNamed:@"halloween.jpg"] date:[NSDate dateWithTimeIntervalSinceNow:-290] type:BubbleTypeSomeoneElse];
-    photoBubble.avatar = [UIImage imageNamed:@"avatar1.png"];
     
-    NSBubbleData *replyBubble = [NSBubbleData dataWithText:@"Wow.. Really cool picture out there. iPhone 5 has really nice camera, yeah?" date:[NSDate dateWithTimeIntervalSinceNow:-5] type:BubbleTypeMine];
-    replyBubble.avatar = nil;
+    currentChannel = [PNChannel channelWithName:current_user.objectId];
+    targetChannel = [PNChannel channelWithName:destinationUser.objectId];
     
-    bubbleData = [[NSMutableArray alloc] initWithObjects:heyBubble, photoBubble, replyBubble, nil];
+    [PubNub subscribeOnChannel:currentChannel];
+    
+
+    
+    
+
+    NSBubbleData *heyBubble = [NSBubbleData dataWithText:current_userid date:[NSDate dateWithTimeIntervalSinceNow:-300] type:BubbleTypeSomeoneElse];
+    heyBubble.avatar = currentProfilePic;
+    
+    NSBubbleData *photoBubble = [NSBubbleData dataWithText:@"test" date:[NSDate dateWithTimeIntervalSinceNow:-290] type:BubbleTypeSomeoneElse];
+    photoBubble.avatar = currentProfilePic;
+    
+    NSBubbleData *replyBubble = [NSBubbleData dataWithText:target_userid date:[NSDate dateWithTimeIntervalSinceNow:-5] type:BubbleTypeMine];
+    replyBubble.avatar = target_profile;
+    
+
+    
+    
+    bubbleData = [[NSMutableArray alloc] initWithObjects:heyBubble, replyBubble, photoBubble, nil];
     bubbleTable.bubbleDataSource = self;
     
     // The line below sets the snap interval in seconds. This defines how the bubbles will be grouped in time.
@@ -88,12 +94,18 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
     NSLog(@"user is %@", destinationUser.objectId);
+    
+
 }
+
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
+
+
 
 #pragma mark - UIBubbleTableViewDataSource implementation
 
@@ -102,10 +114,28 @@
     return [bubbleData count];
 }
 
-- (NSBubbleData *)bubbleTableView:(UIBubbleTableView *)tableView dataForRow:(NSInteger)row
+
+
+#pragma mark - Actions
+
+- (IBAction)sayPressed:(id)sender
 {
-    return [bubbleData objectAtIndex:row];
+    bubbleTable.typingBubble = NSBubbleTypingTypeNobody;
+    
+    NSBubbleData *sayBubble = [NSBubbleData dataWithText:textField.text date:[NSDate dateWithTimeIntervalSinceNow:0] type:BubbleTypeMine];
+    sayBubble.avatar = currentProfilePic;
+
+    [bubbleData addObject:sayBubble];
+    [bubbleTable reloadData];
+    [PubNub sendMessage:textField.text toChannel:targetChannel];
+    textField.text = @"";
+    [textField resignFirstResponder];
 }
+
+-(void) setDestinationUser:(PFUser *) user{
+    destinationUser = user;
+}
+
 
 #pragma mark - Keyboard events
 
@@ -126,6 +156,9 @@
     }];
 }
 
+
+
+
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification
 {
     NSDictionary* info = [aNotification userInfo];
@@ -143,22 +176,13 @@
     }];
 }
 
-#pragma mark - Actions
-
-- (IBAction)sayPressed:(id)sender
+- (NSBubbleData *)bubbleTableView:(UIBubbleTableView *)tableView dataForRow:(NSInteger)row
 {
-    bubbleTable.typingBubble = NSBubbleTypingTypeNobody;
-    
-    NSBubbleData *sayBubble = [NSBubbleData dataWithText:textField.text date:[NSDate dateWithTimeIntervalSinceNow:0] type:BubbleTypeMine];
-    [bubbleData addObject:sayBubble];
-    [bubbleTable reloadData];
-    
-    textField.text = @"";
-    [textField resignFirstResponder];
+    return [bubbleData objectAtIndex:row];
 }
 
--(void) setDestinationUser:(PFUser *) user{
-    destinationUser = user;
-}
+
+
+
 
 @end

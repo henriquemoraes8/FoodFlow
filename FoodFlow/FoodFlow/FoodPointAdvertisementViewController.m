@@ -31,6 +31,10 @@
     return self;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [_tableAnnouncements reloadData];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -100,6 +104,10 @@
     CGFloat buyAmount = [current[@"buyAmount"] floatValue];
     transaction[@"amount"] = [NSNumber numberWithFloat:buyAmount*(1 - discount/100.00)];
     [transaction saveInBackground];
+    
+//    ChatViewController *vc = [segue destinationViewController];
+//    [vc setDestinationUser:user];
+
     [self performSegueWithIdentifier:@"chatSegue" sender:self];
     
 }
@@ -112,16 +120,12 @@
     NSLog(@"segue from Available sellers screen");
     //addToCartViewContollerForItem
     if([[segue identifier] isEqualToString:@"chatSegue"]){
-        
-        
-        
         NSIndexPath *selectedRow = [[self tableAnnouncements] indexPathForSelectedRow];
         //open chat dialogue with this user
         PFUser *user = users[[selectedRow row]];
         ChatViewController *vc = [segue destinationViewController];
         [vc setDestinationUser:user];
     }
-    
 }
 
 
