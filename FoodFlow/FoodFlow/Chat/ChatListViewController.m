@@ -65,6 +65,8 @@
     [queryPerson getObjectInBackgroundWithId:personID block:^(PFObject *object, NSError *error) {
         ChatViewController *chat = [self.storyboard instantiateViewControllerWithIdentifier:@"ChatViewController"];
         [chat setDestinationUser:(PFUser*)object];
+        [chat setDefaultMessageSwitch:@"off"];
+
         [self.navigationController pushViewController: chat animated:YES];
     }];
 }
