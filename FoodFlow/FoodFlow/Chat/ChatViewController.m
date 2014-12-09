@@ -16,6 +16,7 @@
     PFUser* destinationUser;
     PFUser* currentUser;
     PFObject *currentConversation;
+    NSString* defaultMsgSwitch;
 
     PNChannel* targetChannel;
     PNChannel* currentChannel;
@@ -40,13 +41,14 @@
     bubbleData = [NSMutableArray new];
     currentChannel = [PNChannel channelWithName:currentUser.objectId];
     //[PubNub subscribeOnChannel:currentChannel];
+    
+    [self sendDefaultMessage];
 
     self.navigationItem.title = [NSString stringWithFormat:@"Chat with %@", destinationUser[@"name"]];
     currentProfilePic = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:currentUser[@"image"]]]];
     
     [self loadConversationAndMessages];
    
-    [self sendDefaultMessage];
 //    UIImage *target_profile = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:destinationUser[@"image"]]]];
     
    // NSString *convoChannel = [NSString stringWithFormat:@"%@_%@", current_user.objectId, destinationUser.objectId];
@@ -121,7 +123,7 @@
     [receiver whereKey:@"receiveID" equalTo:currentUser.objectId];
     [receiver whereKey:@"senderID" equalTo:destinationUser.objectId];
     PFQuery *orQuery = [PFQuery orQueryWithSubqueries:@[sender,receiver]];
-    [orQuery orderByDescending:@"createdAt"];
+    [orQuery orderByAscending:@"createdAt"];
     [orQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         for (PFObject *message in objects) {
             BOOL iSent = [message[@"senderID"] isEqualToString:currentUser.objectId];
@@ -151,31 +153,32 @@
 
 
 -(void) sendDefaultMessage{
+    if ([defaultMsgSwitch isEqualToString:@"on"]){
     NSString* amount = currentUser[@"buyAmount"];
     NSString* location = currentUser[@"meetLocation"];
     
     NSString* msg = [NSString stringWithFormat:@"Hi %@! I wish to buy %@ food points from you at %@. Would you be available to meet?", destinationUser[@"name"], amount, location ];
-targetChannel = [PNChannel channelWithName:destinationUser.objectId shouldObservePresence:YES];
+    targetChannel = [PNChannel channelWithName:destinationUser.objectId shouldObservePresence:YES];
 bubbleTable.typingBubble = NSBubbleTypingTypeNobody;
 
 NSBubbleData *sayBubble = [NSBubbleData dataWithText:msg date:[NSDate dateWithTimeIntervalSinceNow:0] type:BubbleTypeMine];
 sayBubble.avatar = currentProfilePic;
-
-[bubbleData addObject:sayBubble];
-[bubbleTable reloadData];
+//
+//[bubbleData addObject:sayBubble];
+//[bubbleTable reloadData];
 
 PFObject *PFmessage = [PFObject objectWithClassName: @"PFMessage"];
-PFmessage[@"content"] = textField.text;
+    PFmessage[@"content"] = msg;
 PFmessage[@"senderID"] = currentUser.objectId;
 PFmessage[@"receiveID"] = destinationUser.objectId;
 PFmessage[@"isSeen"] = @"false";
 [PFmessage saveEventually];
-NSLog(@"SAVED BY CHAT VIEW CONTROLLER: %@", textField.text);
 
-currentConversation[@"lastMessage"] = textField.text;
-[currentConversation saveInBackground];
+//currentConversation[@"lastMessage"] = msg;
+//[currentConversation saveInBackground];
 
-[PubNub sendMessage:@{@"message":textField.text,@"sender":currentUser.objectId} toChannel:targetChannel];
+        [PubNub sendMessage:@{@"message":msg,@"sender":currentUser.objectId} toChannel:targetChannel];
+}
 
 }
 
@@ -229,6 +232,9 @@ currentConversation[@"lastMessage"] = textField.text;
     destinationUser = user;
 }
 
+-(void) setDefaultMessageSwitch:(NSString *)on{
+    defaultMsgSwitch = on;
+}
 
 #pragma mark - Keyboard events
 

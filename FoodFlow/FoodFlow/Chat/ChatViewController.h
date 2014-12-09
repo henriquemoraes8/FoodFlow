@@ -20,6 +20,7 @@
 //@property (weak, nonatomic) PFUser* destinationUser;
 
 -(void) sendDefaultMessage;
+-(void) setDefaultMessageSwitch:(NSString*) on;
 
 
 @end

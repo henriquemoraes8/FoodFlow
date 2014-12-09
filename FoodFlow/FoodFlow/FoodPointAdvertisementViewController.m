@@ -110,6 +110,8 @@
     
     ChatViewController *chat = [self.storyboard instantiateViewControllerWithIdentifier:@"ChatViewController"];
     [chat setDestinationUser:user];
+    [chat setDefaultMessageSwitch: @"on"];
+
     [self.navigationController pushViewController: chat animated:YES];
 }
 

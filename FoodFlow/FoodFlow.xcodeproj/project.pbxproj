@@ -1613,6 +1613,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "a6030ba1-3e33-4fa6-922e-55041774153b";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1645,6 +1646,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PROVISIONING_PROFILE = "a6030ba1-3e33-4fa6-922e-55041774153b";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1655,8 +1657,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iOS Development: Elder Yoshida (CM2CAT7X37)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Elder Yoshida (CM2CAT7X37)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/FacebookSDK",
 					"$(PROJECT_DIR)/FacebookSDK/FBAudienceNetwork",
@@ -1679,8 +1681,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iOS Development: Elder Yoshida (CM2CAT7X37)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Elder Yoshida (CM2CAT7X37)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/FacebookSDK",
 					"$(PROJECT_DIR)/FacebookSDK/FBAudienceNetwork",
