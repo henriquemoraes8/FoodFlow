@@ -175,13 +175,13 @@
     [currentConversation saveInBackground];
     
     [PubNub sendMessage:@{@"message":textField.text,@"sender":currentUser.objectId} toChannel:targetChannel];
-    
-    textField.text = @"";
-    [textField resignFirstResponder];
     PFPush *push = [[PFPush alloc] init];
     [push setChannel:destinationUser.objectId];
     [push setMessage:textField.text];
     [push sendPushInBackground];
+    textField.text = @"";
+    [textField resignFirstResponder];
+
 }
 
 ////(In AppDelegate.m, define didReceiveMessage delegate method:)
