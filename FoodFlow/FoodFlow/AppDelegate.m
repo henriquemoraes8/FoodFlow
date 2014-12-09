@@ -55,11 +55,7 @@
             NSLog(@"OBSERVER: Error %@, Connection Failed!", connectionError.localizedDescription);
         }
     }];
-    // When users indicate they are Giants fans, we subscribe them to that channel.
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation addUniqueObject:currentUser.objectId forKey:@"channels"];
-    [currentInstallation saveInBackground];
-    
+
     
     return YES;
 }
@@ -101,13 +97,18 @@
     [[PFFacebookUtils session] close];
 }
 
+
 - (void)application:(UIApplication *)application
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    PFUser* currentUser = [PFUser currentUser];
     // Store the deviceToken in the current Installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation addUniqueObject:currentUser.objectId forKey:@"channels"];
     [currentInstallation saveInBackground];
+    
 }
+
 
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
