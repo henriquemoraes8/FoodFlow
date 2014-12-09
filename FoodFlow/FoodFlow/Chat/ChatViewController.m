@@ -32,6 +32,7 @@
 @implementation ChatViewController
 
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -40,17 +41,24 @@
 
     self.navigationItem.title = [NSString stringWithFormat:@"Chat with %@", destinationUser[@"name"]];
     currentProfilePic = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:currentUser[@"image"]]]];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"PFMessage"];
    
 //    UIImage *target_profile = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:destinationUser[@"image"]]]];
     
    // NSString *convoChannel = [NSString stringWithFormat:@"%@_%@", current_user.objectId, destinationUser.objectId];
     currentChannel = [PNChannel channelWithName:currentUser.objectId];
-    targetChannel = [PNChannel channelWithName:destinationUser.objectId];
+    targetChannel = [PNChannel channelWithName:destinationUser.objectId shouldObservePresence:YES];
+    NSLog(@"Target channel is: %@\n\n", destinationUser.objectId);
     
     [PubNub subscribeOnChannel:currentChannel];
     
+    bubbleData = [[NSMutableArray alloc] initWithObjects:nil];
+    bubbleTable.bubbleDataSource = self;
+    
     [[PNObservationCenter defaultCenter] addMessageReceiveObserver:self withBlock:^(PNMessage *message) {
         NSLog(@"OBSERVER: Channel: %@, Message: %@, Message: %@", message.channel.name, message.channelGroup.channels[0], message.message);
+        if ([[message.message valueForKey:@"sender"] isEqualToString:destinationUser.objectId]){
         NSBubbleData *replyBubble = [NSBubbleData dataWithText:[message.message valueForKey:@"message"] date:[NSDate dateWithTimeIntervalSinceNow:0] type:BubbleTypeSomeoneElse];
         PFQuery *query = [PFQuery queryWithClassName:@"_User"];
         PFObject *sender = [query getObjectWithId:[message.message valueForKey:@"sender"]];
@@ -58,12 +66,15 @@
         replyBubble.avatar = sender_profile;
         [bubbleData addObject:replyBubble];
         [bubbleTable reloadData];
+            [self storeReceivedMessage:message readStatusAs:@"true"];
 
+        }
+        else{
+            [self storeReceivedMessage:message readStatusAs:@"false"];
+        }
     }];
     
 
-    bubbleData = [[NSMutableArray alloc] initWithObjects:nil];
-    bubbleTable.bubbleDataSource = self;
 //
     // The line below sets the snap interval in seconds. This defines how the bubbles will be grouped in time.
     // Interval of 120 means that if the next messages comes in 2 minutes since the last message, it will be added into the same group.
@@ -92,8 +103,21 @@
     NSLog(@"user is %@", destinationUser.objectId);
     
 
+
 }
 
+
+- (void)storeReceivedMessage:(PNMessage *)message readStatusAs:(NSString*) status
+{
+    PFObject *PFmessage = [PFObject objectWithClassName: @"PFMessage"];
+    PFmessage[@"content"] = [message.message valueForKey:@"message"];
+    PFmessage[@"senderID"] = [message.message valueForKey:@"sender"];
+    PFmessage[@"receiveID"] = [message.message valueForKey:@"sender"];
+    PFmessage[@"isSeen"] = status;
+    [PFmessage saveEventually];
+    NSLog(@"SAVED BY CHAT VIEW CONTROLLER: %@", message.message);
+
+}
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -116,6 +140,7 @@
 
 - (IBAction)sayPressed:(id)sender
 {
+    targetChannel = [PNChannel channelWithName:destinationUser.objectId shouldObservePresence:YES];
     bubbleTable.typingBubble = NSBubbleTypingTypeNobody;
     
     NSBubbleData *sayBubble = [NSBubbleData dataWithText:textField.text date:[NSDate dateWithTimeIntervalSinceNow:0] type:BubbleTypeMine];
@@ -128,16 +153,16 @@
     [textField resignFirstResponder];
 }
 
-//(In AppDelegate.m, define didReceiveMessage delegate method:)
-- (void)pubnubClient:(PubNub *)client displayMessageFrom:(PNMessage *)message {
-    NSLog(@"Received IN CHatviewCONTROLLER: %@", message.message);
-    NSBubbleData *sayBubble = [NSBubbleData dataWithText:message.message date:[NSDate dateWithTimeIntervalSinceNow:0] type:BubbleTypeSomeoneElse];
-    sayBubble.avatar = currentProfilePic;
-    
-    [bubbleData addObject:sayBubble];
-    [bubbleTable reloadData];
-    
-}
+////(In AppDelegate.m, define didReceiveMessage delegate method:)
+//- (void)pubnubClient:(PubNub *)client displayMessageFrom:(PNMessage *)message {
+//    NSLog(@"Received IN ChatviewCONTROLLER: %@", message.message);
+//    NSBubbleData *sayBubble = [NSBubbleData dataWithText:message.message date:[NSDate dateWithTimeIntervalSinceNow:0] type:BubbleTypeSomeoneElse];
+//    sayBubble.avatar = currentProfilePic;
+//    
+//    [bubbleData addObject:sayBubble];
+//    [bubbleTable reloadData];
+//    
+//}
 
 -(void) setDestinationUser:(PFUser *) user{
     destinationUser = user;
@@ -187,9 +212,6 @@
 {
     return [bubbleData objectAtIndex:row];
 }
-
-
-
 
 
 @end

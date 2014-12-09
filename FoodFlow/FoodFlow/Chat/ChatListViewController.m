@@ -12,6 +12,7 @@
     NSMutableDictionary *chatViewControllerDic;
 }
 @end
+
 @implementation ChatListViewController
 
 
