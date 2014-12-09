@@ -111,6 +111,7 @@
         if (objects.count > 0) {
             currentConversation = objects[0];
         }
+        [self sendDefaultMessage];
         [self loadPFMessages];
     }];
 }
@@ -134,6 +135,8 @@
             [bubbleData addObject:bubble];
         }
         [bubbleTable reloadData];
+        [bubbleTable layoutIfNeeded];
+        [bubbleTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[bubbleTable numberOfRowsInSection:0]-1 inSection:[bubbleTable numberOfSections]-1] atScrollPosition:UITableViewScrollPositionNone animated:YES];
     }];
 }
 
@@ -158,6 +161,12 @@
     NSString* location = currentUser[@"meetLocation"];
     
     NSString* msg = [NSString stringWithFormat:@"Hi %@! I wish to buy %@ food points from you at %@. Would you be available to meet?", destinationUser[@"name"], amount, location ];
+<<<<<<< HEAD
+=======
+    
+        currentConversation[@"lastMessage"] = msg;
+        
+>>>>>>> FETCH_HEAD
     targetChannel = [PNChannel channelWithName:destinationUser.objectId shouldObservePresence:YES];
 bubbleTable.typingBubble = NSBubbleTypingTypeNobody;
 
