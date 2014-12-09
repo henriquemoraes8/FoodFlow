@@ -8,6 +8,8 @@
 
 #import "ChatListViewController.h"
 
+//Load all chat conversations, with most recent one on top
+
 @implementation ChatListViewController
 
 @end
