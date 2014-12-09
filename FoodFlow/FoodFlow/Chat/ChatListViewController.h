@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "ChatViewController.h"
 
 @interface ChatListViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+- (UIViewController *) getChatViewController:(PFUser *)user;
+@property (weak, nonatomic) IBOutlet UITableView *tableChats;
 
 @end

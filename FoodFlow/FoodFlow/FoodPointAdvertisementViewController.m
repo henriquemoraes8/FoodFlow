@@ -9,6 +9,7 @@
 #import "FoodPointAdvertisementViewController.h"
 #import "FoodAdvertisementTableViewCell.h"
 #import "AppDelegate.h"
+#import "ChatListViewController.h"
 #import "ChatViewController.h"
 
 @interface FoodPointAdvertisementViewController ()
@@ -104,8 +105,10 @@
     CGFloat buyAmount = [current[@"buyAmount"] floatValue];
     transaction[@"amount"] = [NSNumber numberWithFloat:buyAmount*(1 - discount/100.00)];
     [transaction saveInBackground];
-
-    [self performSegueWithIdentifier:@"chatSegue" sender:self];
+    ChatListViewController *chatListViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ChatListViewController"];
+    UIViewController *chat = [chatListViewController getChatViewController:user];
+    [self.navigationController pushViewController: chat animated:YES];
+    //[self performSegueWithIdentifier:@"chatSegue" sender:self];
     
 }
 
