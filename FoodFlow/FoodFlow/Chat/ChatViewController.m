@@ -134,8 +134,8 @@
 
 //(In AppDelegate.m, define didReceiveMessage delegate method:)
 - (void)pubnubClient:(PubNub *)client didReceiveMessage:(PNMessage *)message {
-    NSLog(@"Received: %@", message.message);   
-    NSBubbleData *sayBubble = [NSBubbleData dataWithText:textField.text date:[NSDate dateWithTimeIntervalSinceNow:0] type:BubbleTypeSomeoneElse];
+    NSLog(@"Received: %@", message.message);
+    NSBubbleData *sayBubble = [NSBubbleData dataWithText:message.message date:[NSDate dateWithTimeIntervalSinceNow:0] type:BubbleTypeSomeoneElse];
     sayBubble.avatar = currentProfilePic;
     
     [bubbleData addObject:sayBubble];
