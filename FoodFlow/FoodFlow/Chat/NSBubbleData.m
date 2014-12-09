@@ -119,6 +119,8 @@ const UIEdgeInsets imageInsetsSomeone = {11, 18, 16, 14};
 #endif    
 }
 
+
+
 - (id)initWithView:(UIView *)view date:(NSDate *)date type:(NSBubbleType)type insets:(UIEdgeInsets)insets  
 {
     self = [super init];
