@@ -178,6 +178,10 @@
     
     textField.text = @"";
     [textField resignFirstResponder];
+    PFPush *push = [[PFPush alloc] init];
+    [push setChannel:destinationUser.objectId];
+    [push setMessage:textField.text];
+    [push sendPushInBackground];
 }
 
 ////(In AppDelegate.m, define didReceiveMessage delegate method:)

@@ -18,6 +18,16 @@
     [Parse setApplicationId:@"Mfd50KnlM4lq6j7fyhTGjI5a1xv3hLaBA8kxAdlJ"
                   clientKey:@"qNnpR8AjpBFh2xVvUNTLu5Pbzwhctn4NWjjLmx1e"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                    UIUserNotificationTypeBadge |
+                                                    UIUserNotificationTypeSound);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                             categories:nil];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
+    
+    
     [PFFacebookUtils initializeFacebook];
     [PubNub setDelegate:self]; // Add This Line
 
@@ -45,6 +55,12 @@
             NSLog(@"OBSERVER: Error %@, Connection Failed!", connectionError.localizedDescription);
         }
     }];
+    // When users indicate they are Giants fans, we subscribe them to that channel.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation addUniqueObject:currentUser.objectId forKey:@"channels"];
+    [currentInstallation saveInBackground];
+    
+    
     return YES;
 }
 
@@ -83,6 +99,14 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     [[PFFacebookUtils session] close];
+}
+
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Store the deviceToken in the current Installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
 }
 
 - (BOOL)application:(UIApplication *)application
