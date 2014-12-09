@@ -46,6 +46,7 @@
     
     [self loadConversationAndMessages];
    
+    [self sendDefaultMessage];
 //    UIImage *target_profile = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:destinationUser[@"image"]]]];
     
    // NSString *convoChannel = [NSString stringWithFormat:@"%@_%@", current_user.objectId, destinationUser.objectId];
@@ -148,6 +149,35 @@
     return [bubbleData count];
 }
 
+
+-(void) sendDefaultMessage{
+    NSString* amount = currentUser[@"buyAmount"];
+    NSString* location = currentUser[@"meetLocation"];
+    
+    NSString* msg = [NSString stringWithFormat:@"Hi %@! I wish to buy %@ food points from you at %@. Would you be available to meet?", destinationUser[@"name"], amount, location ];
+targetChannel = [PNChannel channelWithName:destinationUser.objectId shouldObservePresence:YES];
+bubbleTable.typingBubble = NSBubbleTypingTypeNobody;
+
+NSBubbleData *sayBubble = [NSBubbleData dataWithText:msg date:[NSDate dateWithTimeIntervalSinceNow:0] type:BubbleTypeMine];
+sayBubble.avatar = currentProfilePic;
+
+[bubbleData addObject:sayBubble];
+[bubbleTable reloadData];
+
+PFObject *PFmessage = [PFObject objectWithClassName: @"PFMessage"];
+PFmessage[@"content"] = textField.text;
+PFmessage[@"senderID"] = currentUser.objectId;
+PFmessage[@"receiveID"] = destinationUser.objectId;
+PFmessage[@"isSeen"] = @"false";
+[PFmessage saveEventually];
+NSLog(@"SAVED BY CHAT VIEW CONTROLLER: %@", textField.text);
+
+currentConversation[@"lastMessage"] = textField.text;
+[currentConversation saveInBackground];
+
+[PubNub sendMessage:@{@"message":textField.text,@"sender":currentUser.objectId} toChannel:targetChannel];
+
+}
 
 
 #pragma mark - Actions
