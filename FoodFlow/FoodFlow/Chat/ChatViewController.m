@@ -40,7 +40,7 @@
     currentUser = [PFUser currentUser];
     PFMessages = [NSMutableArray new];
     currentChannel = [PNChannel channelWithName:currentUser.objectId];
-    [PubNub subscribeOnChannel:currentChannel];
+    //[PubNub subscribeOnChannel:currentChannel];
 
     self.navigationItem.title = [NSString stringWithFormat:@"Chat with %@", destinationUser[@"name"]];
     currentProfilePic = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:currentUser[@"image"]]]];
@@ -207,9 +207,6 @@
         bubbleTable.frame = frame;
     }];
 }
-
-
-
 
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification
 {

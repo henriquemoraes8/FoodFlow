@@ -30,6 +30,9 @@
     [PubNub setConfiguration:myConfig];
     // #3 Connect to the PubNub
     [PubNub connect];
+    PFUser* currentUser = [PFUser currentUser];
+    PNChannel* currentChannel = [PNChannel channelWithName:currentUser.objectId];
+    [PubNub subscribeOnChannel:currentChannel];
     
     // #4 Add observer to look for connection events
     [[PNObservationCenter defaultCenter] addClientConnectionStateObserver:self withCallbackBlock:^(NSString *origin, BOOL connected, PNError *connectionError){
