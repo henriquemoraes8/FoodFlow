@@ -14,6 +14,8 @@
 @interface ChatViewController()
 {
     PFUser* destinationUser;
+    PFUser* currentUser;
+
     PNChannel* targetChannel;
     PNChannel* currentChannel;
     
@@ -34,24 +36,26 @@
 {
     [super viewDidLoad];
     
-    PFUser *current_user = [PFUser currentUser];
+    currentUser = [PFUser currentUser];
 
     self.navigationItem.title = [NSString stringWithFormat:@"Chat with %@", destinationUser[@"name"]];
-    currentProfilePic = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:current_user[@"image"]]]];
+    currentProfilePic = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:currentUser[@"image"]]]];
    
 //    UIImage *target_profile = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:destinationUser[@"image"]]]];
     
    // NSString *convoChannel = [NSString stringWithFormat:@"%@_%@", current_user.objectId, destinationUser.objectId];
-    currentChannel = [PNChannel channelWithName:current_user.objectId];
+    currentChannel = [PNChannel channelWithName:currentUser.objectId];
     targetChannel = [PNChannel channelWithName:destinationUser.objectId];
     
     [PubNub subscribeOnChannel:currentChannel];
     
     [[PNObservationCenter defaultCenter] addMessageReceiveObserver:self withBlock:^(PNMessage *message) {
-        NSLog(@"OBSERVER: Channel: %@, Message: %@", message.channel.name, message.message);
-        NSBubbleData *replyBubble = [NSBubbleData dataWithText:message.message date:[NSDate dateWithTimeIntervalSinceNow:0] type:BubbleTypeSomeoneElse];
-        replyBubble.avatar = currentProfilePic;
-        
+        NSLog(@"OBSERVER: Channel: %@, Message: %@, Message: %@", message.channel.name, message.channelGroup.channels[0], message.message);
+        NSBubbleData *replyBubble = [NSBubbleData dataWithText:[message.message valueForKey:@"message"] date:[NSDate dateWithTimeIntervalSinceNow:0] type:BubbleTypeSomeoneElse];
+        PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+        PFObject *sender = [query getObjectWithId:[message.message valueForKey:@"sender"]];
+        UIImage *sender_profile = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:sender[@"image"]]]];
+        replyBubble.avatar = sender_profile;
         [bubbleData addObject:replyBubble];
         [bubbleTable reloadData];
 
@@ -119,7 +123,7 @@
 
     [bubbleData addObject:sayBubble];
     [bubbleTable reloadData];
-    [PubNub sendMessage:textField.text toChannel:targetChannel];
+    [PubNub sendMessage:@{@"message":textField.text,@"sender":currentUser.objectId} toChannel:targetChannel];
     textField.text = @"";
     [textField resignFirstResponder];
 }
