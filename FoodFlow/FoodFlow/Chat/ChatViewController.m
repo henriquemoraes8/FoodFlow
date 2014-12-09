@@ -121,7 +121,7 @@
     [receiver whereKey:@"receiveID" equalTo:currentUser.objectId];
     [receiver whereKey:@"senderID" equalTo:destinationUser.objectId];
     PFQuery *orQuery = [PFQuery orQueryWithSubqueries:@[sender,receiver]];
-    [orQuery orderByDescending:@"createdAt"];
+    [orQuery orderByAscending:@"createdAt"];
     [orQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         for (PFObject *message in objects) {
             BOOL iSent = [message[@"senderID"] isEqualToString:currentUser.objectId];
