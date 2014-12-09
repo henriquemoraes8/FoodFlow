@@ -134,7 +134,7 @@
         }
         [bubbleTable reloadData];
         [bubbleTable layoutIfNeeded];
-        [bubbleTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[bubbleTable numberOfRowsInSection:0]-1 inSection:[bubbleTable numberOfSections]-1] atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        [bubbleTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[bubbleTable numberOfRowsInSection:[bubbleTable numberOfSections]-1]-1 inSection:[bubbleTable numberOfSections]-1] atScrollPosition:UITableViewScrollPositionNone animated:YES];
     }];
 }
 
@@ -199,6 +199,8 @@ PFmessage[@"isSeen"] = @"false";
 
     [bubbleData addObject:sayBubble];
     [bubbleTable reloadData];
+    [bubbleTable layoutIfNeeded];
+    [bubbleTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[bubbleTable numberOfRowsInSection:[bubbleTable numberOfSections]-1]-1 inSection:[bubbleTable numberOfSections]-1] atScrollPosition:UITableViewScrollPositionNone animated:YES];
     
     PFObject *PFmessage = [PFObject objectWithClassName: @"PFMessage"];
     PFmessage[@"content"] = textField.text;
