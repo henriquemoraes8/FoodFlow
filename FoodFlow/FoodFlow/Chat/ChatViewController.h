@@ -19,6 +19,7 @@
 -(void) setDestinationUser:(PFUser *) user;
 //@property (weak, nonatomic) PFUser* destinationUser;
 
+-(void) sendDefaultMessage;
 
 
 @end
