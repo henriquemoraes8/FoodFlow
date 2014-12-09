@@ -33,7 +33,6 @@
     [super viewDidLoad];
 
     [self updateInterface];
-    //[self deleteDatabase];
     
     self.loginButton.readPermissions = @[@"public_profile", @"email"];
     self.loginButton.delegate = self;
@@ -205,39 +204,6 @@
 - (void)populateLoggedOffInterface {
     self.lblLoginStatus.text = @"You are logged out!";
     [self toggleHiddenState:YES];
-}
-
-- (void)deleteDatabase {
-    PFQuery *user = [PFUser query];
-    [user whereKeyExists:@"objectId"];
-    [user findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        [self deleteAll:objects];
-    }];
-    
-    PFQuery *conversation = [PFQuery queryWithClassName:@"Conversation"];
-    [conversation whereKeyExists:@"objectId"];
-    [conversation findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        [self deleteAll:objects];
-    }];
-    
-    PFQuery *message = [PFQuery queryWithClassName:@"PFMessage"];
-    [message whereKeyExists:@"objectId"];
-    [message findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        [self deleteAll:objects];
-    }];
-    
-    PFQuery *transaction = [PFQuery queryWithClassName:@"Transaction"];
-    [transaction whereKeyExists:@"objectId"];
-    [transaction findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        [self deleteAll:objects];
-    }];
-    
-}
-
-- (void)deleteAll:(NSArray*)array {
-    for (PFObject *object in array) {
-        [object deleteInBackground];
-    }
 }
 
 @end
