@@ -35,13 +35,11 @@
     [super viewDidLoad];
     
     PFUser *current_user = [PFUser currentUser];
-    
-    NSString *current_userid = current_user.username;
-    NSString *target_userid = destinationUser.username;
+
+    self.navigationItem.title = [NSString stringWithFormat:@"Chat with %@", destinationUser[@"name"]];
     currentProfilePic = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:current_user[@"image"]]]];
    
-    UIImage *target_profile = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:destinationUser[@"image"]]]];
-    
+//    UIImage *target_profile = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:destinationUser[@"image"]]]];
     
     
     currentChannel = [PNChannel channelWithName:current_user.objectId];
@@ -50,24 +48,9 @@
     [PubNub subscribeOnChannel:currentChannel];
     
 
-    
-    
-
-    NSBubbleData *heyBubble = [NSBubbleData dataWithText:current_userid date:[NSDate dateWithTimeIntervalSinceNow:-300] type:BubbleTypeSomeoneElse];
-    heyBubble.avatar = currentProfilePic;
-    
-    NSBubbleData *photoBubble = [NSBubbleData dataWithText:@"test" date:[NSDate dateWithTimeIntervalSinceNow:-290] type:BubbleTypeSomeoneElse];
-    photoBubble.avatar = currentProfilePic;
-    
-    NSBubbleData *replyBubble = [NSBubbleData dataWithText:target_userid date:[NSDate dateWithTimeIntervalSinceNow:-5] type:BubbleTypeMine];
-    replyBubble.avatar = target_profile;
-    
-
-    
-    
-    bubbleData = [[NSMutableArray alloc] initWithObjects:heyBubble, replyBubble, photoBubble, nil];
+    bubbleData = [[NSMutableArray alloc] initWithObjects:nil];
     bubbleTable.bubbleDataSource = self;
-    
+//
     // The line below sets the snap interval in seconds. This defines how the bubbles will be grouped in time.
     // Interval of 120 means that if the next messages comes in 2 minutes since the last message, it will be added into the same group.
     // Groups are delimited with header which contains date and time for the first message in the group.
@@ -85,7 +68,6 @@
     //    - NSBubbleTypingTypeMe - shows "now typing" bubble on the right
     //    - NSBubbleTypingTypeNone - no "now typing" bubble
     
-    bubbleTable.typingBubble = NSBubbleTypingTypeSomebody;
     
     [bubbleTable reloadData];
     

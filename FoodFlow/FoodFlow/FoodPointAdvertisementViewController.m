@@ -104,9 +104,6 @@
     CGFloat buyAmount = [current[@"buyAmount"] floatValue];
     transaction[@"amount"] = [NSNumber numberWithFloat:buyAmount*(1 - discount/100.00)];
     [transaction saveInBackground];
-    
-//    ChatViewController *vc = [segue destinationViewController];
-//    [vc setDestinationUser:user];
 
     [self performSegueWithIdentifier:@"chatSegue" sender:self];
     
