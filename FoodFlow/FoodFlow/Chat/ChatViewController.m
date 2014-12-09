@@ -38,6 +38,8 @@
     [super viewDidLoad];
     
     currentUser = [PFUser currentUser];
+    currentChannel = [PNChannel channelWithName:currentUser.objectId];
+    [PubNub subscribeOnChannel:currentChannel];
 
     self.navigationItem.title = [NSString stringWithFormat:@"Chat with %@", destinationUser[@"name"]];
     currentProfilePic = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:currentUser[@"image"]]]];
@@ -48,10 +50,8 @@
     
    // NSString *convoChannel = [NSString stringWithFormat:@"%@_%@", current_user.objectId, destinationUser.objectId];
     currentChannel = [PNChannel channelWithName:currentUser.objectId];
-    targetChannel = [PNChannel channelWithName:destinationUser.objectId shouldObservePresence:YES];
     NSLog(@"Target channel is: %@\n\n", destinationUser.objectId);
     
-    [PubNub subscribeOnChannel:currentChannel];
     
     bubbleData = [[NSMutableArray alloc] initWithObjects:nil];
     bubbleTable.bubbleDataSource = self;
@@ -66,12 +66,8 @@
         replyBubble.avatar = sender_profile;
         [bubbleData addObject:replyBubble];
         [bubbleTable reloadData];
-            [self storeReceivedMessage:message readStatusAs:@"true"];
+        }
 
-        }
-        else{
-            [self storeReceivedMessage:message readStatusAs:@"false"];
-        }
     }];
     
 
@@ -107,17 +103,6 @@
 }
 
 
-- (void)storeReceivedMessage:(PNMessage *)message readStatusAs:(NSString*) status
-{
-    PFObject *PFmessage = [PFObject objectWithClassName: @"PFMessage"];
-    PFmessage[@"content"] = [message.message valueForKey:@"message"];
-    PFmessage[@"senderID"] = [message.message valueForKey:@"sender"];
-    PFmessage[@"receiveID"] = [message.message valueForKey:@"sender"];
-    PFmessage[@"isSeen"] = status;
-    [PFmessage saveEventually];
-    NSLog(@"SAVED BY CHAT VIEW CONTROLLER: %@", message.message);
-
-}
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -148,6 +133,18 @@
 
     [bubbleData addObject:sayBubble];
     [bubbleTable reloadData];
+    
+    
+    PFObject *PFmessage = [PFObject objectWithClassName: @"PFMessage"];
+    PFmessage[@"content"] = textField.text;
+    PFmessage[@"senderID"] = currentUser.objectId;
+    PFmessage[@"receiveID"] = destinationUser.objectId;
+    PFmessage[@"isSeen"] = @"false";
+    [PFmessage saveEventually];
+    NSLog(@"SAVED BY CHAT VIEW CONTROLLER: %@", textField.text);
+    
+    
+    
     [PubNub sendMessage:@{@"message":textField.text,@"sender":currentUser.objectId} toChannel:targetChannel];
     
     textField.text = @"";

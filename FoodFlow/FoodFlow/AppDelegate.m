@@ -48,15 +48,6 @@
 //(In AppDelegate.m, define didReceiveMessage delegate method:)
 - (void)pubnubClient:(PubNub *)client didReceiveMessage:(PNMessage *)message {
     NSLog(@"Received IN APP DELEGATE: %@", message.message);
-    if (message.message){
-        PFObject *PFmessage = [PFObject objectWithClassName: @"PFMessage"];
-        PFmessage[@"content"] = [message.message valueForKey:@"message"];
-        PFmessage[@"senderID"] = [message.message valueForKey:@"sender"];
-        PFmessage[@"receiveID"] = [message.message valueForKey:@"sender"];
-        PFmessage[@"isSeen"] = @"false";
-        NSLog(@"SAVED BY APP DELEGATE: %@", message.message);
-
-    }
 }
 
 - (void)pubnubClient:(PubNub *)client didSubscribeOnChannels:(NSArray *)channels {

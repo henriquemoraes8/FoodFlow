@@ -163,6 +163,7 @@
                 NSLog(@"User with facebook logged in!");
             }
             [self updateCurrentPFUser:user];
+            
         }
     }];
 }
