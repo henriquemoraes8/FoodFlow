@@ -40,28 +40,36 @@
     [PubNub setConfiguration:myConfig];
     // #3 Connect to the PubNub
     [PubNub connect];
+
+    [self setupPubNub];
+    
+//    // #4 Add observer to look for connection events
+//    [[PNObservationCenter defaultCenter] addClientConnectionStateObserver:self withCallbackBlock:^(NSString *origin, BOOL connected, PNError *connectionError){
+//        if (connected)
+//        {
+//            NSLog(@"OBSERVER: Successful Connection!");
+//        }
+//        else if (!connected || connectionError)
+//        {
+//            NSLog(@"OBSERVER: Error %@, Connection Failed!", connectionError.localizedDescription);
+//        }
+//    }];
+//    // When users indicate they are Giants fans, we subscribe them to that channel.
+//    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+//    [currentInstallation addUniqueObject:currentUser.objectId forKey:@"channels"];
+//    [currentInstallation saveInBackground];
+    
+    
+    return YES;
+}
+
+- (void)setupPubNub {
+    if (![PFUser currentUser])
+        return;
     PFUser* currentUser = [PFUser currentUser];
     PNChannel* currentChannel = [PNChannel channelWithName:currentUser.objectId];
     [PubNub subscribeOnChannel:currentChannel];
     
-    // #4 Add observer to look for connection events
-    [[PNObservationCenter defaultCenter] addClientConnectionStateObserver:self withCallbackBlock:^(NSString *origin, BOOL connected, PNError *connectionError){
-        if (connected)
-        {
-            NSLog(@"OBSERVER: Successful Connection!");
-        }
-        else if (!connected || connectionError)
-        {
-            NSLog(@"OBSERVER: Error %@, Connection Failed!", connectionError.localizedDescription);
-        }
-    }];
-    // When users indicate they are Giants fans, we subscribe them to that channel.
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation addUniqueObject:currentUser.objectId forKey:@"channels"];
-    [currentInstallation saveInBackground];
-    
-    
-    return YES;
 }
 
 //(In AppDelegate.m, define didReceiveMessage delegate method:)

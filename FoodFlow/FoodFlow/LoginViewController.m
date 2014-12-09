@@ -31,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     [self updateInterface];
     
     self.loginButton.readPermissions = @[@"public_profile", @"email"];
@@ -64,6 +64,7 @@
     self.lblUsername.hidden = shouldHide;
     self.lblEmail.hidden = shouldHide;
     self.profilePicture.hidden = shouldHide;
+    self.imageFood.hidden = !shouldHide;
     self.lblContinue.hidden = shouldHide;
     self.buttonLogin.hidden = !shouldHide;
 }
@@ -184,6 +185,8 @@
             
             [user saveInBackground];
             [self populateLoggedInInterface];
+            AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+            [delegate setupPubNub];
         }
     }];
 }

@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet FBProfilePictureView *profilePicture;
 
 @property (weak, nonatomic) IBOutlet UIImageView *defaultPicture;
+@property (weak, nonatomic) IBOutlet UIImageView *imageFood;
 
 - (IBAction)loginButtonPressed:(id)sender;
 
