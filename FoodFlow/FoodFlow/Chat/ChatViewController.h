@@ -18,7 +18,6 @@
 
 -(void) setDestinationUser:(PFUser *) user;
 //@property (weak, nonatomic) PFUser* destinationUser;
-- (void)storeReceivedMessage:(PNMessage *)message readStatusAs:(NSString*) status;
 
 
 
