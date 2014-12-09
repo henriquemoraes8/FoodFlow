@@ -41,6 +41,8 @@
     bubbleData = [NSMutableArray new];
     currentChannel = [PNChannel channelWithName:currentUser.objectId];
     //[PubNub subscribeOnChannel:currentChannel];
+    
+    [self sendDefaultMessage];
 
     self.navigationItem.title = [NSString stringWithFormat:@"Chat with %@", destinationUser[@"name"]];
     currentProfilePic = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:currentUser[@"image"]]]];
@@ -109,7 +111,6 @@
         if (objects.count > 0) {
             currentConversation = objects[0];
         }
-        [self sendDefaultMessage];
         [self loadPFMessages];
     }];
 }
@@ -159,9 +160,6 @@
     NSString* location = currentUser[@"meetLocation"];
     
     NSString* msg = [NSString stringWithFormat:@"Hi %@! I wish to buy %@ food points from you at %@. Would you be available to meet?", destinationUser[@"name"], amount, location ];
-    
-        currentConversation[@"lastMessage"] = msg;
-        
     targetChannel = [PNChannel channelWithName:destinationUser.objectId shouldObservePresence:YES];
 bubbleTable.typingBubble = NSBubbleTypingTypeNobody;
 
