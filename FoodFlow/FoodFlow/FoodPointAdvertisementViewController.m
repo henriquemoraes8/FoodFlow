@@ -108,7 +108,7 @@
     
     [self recordConversationWithUser:user];
     
-    ChatViewController *chat = [self.storyboard instantiateViewControllerWithIdentifier:@"Chat"];
+    ChatViewController *chat = [self.storyboard instantiateViewControllerWithIdentifier:@"ChatViewController"];
     [chat setDestinationUser:user];
     [self.navigationController pushViewController: chat animated:YES];
 }
@@ -128,6 +128,7 @@
             conversation[@"person1"] = current.objectId;
             conversation[@"person2"] = user.objectId;
             conversation[@"lastMessage"] = @"";
+            [conversation saveInBackground];
         }
     }];
 }

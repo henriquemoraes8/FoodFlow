@@ -297,7 +297,7 @@
         <!--Chat View Controller-->
         <scene sceneID="hmc-Y8-uB0">
             <objects>
-                <viewController storyboardIdentifier="ChatViewController" id="oGT-Fb-Muw" customClass="ChatViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oGT-Fb-Muw" customClass="ChatViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QsW-vn-Rsz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -15,6 +15,7 @@
 {
     PFUser* destinationUser;
     PFUser* currentUser;
+    PFObject *currentConversation;
 
     PNChannel* targetChannel;
     PNChannel* currentChannel;
@@ -26,25 +27,25 @@
     IBOutlet UITextField *textField;
     
     NSMutableArray *bubbleData;
+    NSMutableArray *PFMessages;
 }
 @end
 
 @implementation ChatViewController
-
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     currentUser = [PFUser currentUser];
+    PFMessages = [NSMutableArray new];
     currentChannel = [PNChannel channelWithName:currentUser.objectId];
     [PubNub subscribeOnChannel:currentChannel];
 
     self.navigationItem.title = [NSString stringWithFormat:@"Chat with %@", destinationUser[@"name"]];
     currentProfilePic = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:currentUser[@"image"]]]];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"PFMessage"];
+    [self loadConversationAndMessages];
    
 //    UIImage *target_profile = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:destinationUser[@"image"]]]];
     
@@ -67,7 +68,6 @@
         [bubbleData addObject:replyBubble];
         [bubbleTable reloadData];
         }
-
     }];
     
 
@@ -97,13 +97,34 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
     NSLog(@"user is %@", destinationUser.objectId);
-    
-
-
 }
 
+- (void)loadConversationAndMessages {
+    PFQuery *query1 = [PFQuery queryWithClassName:@"Conversation"];
+    [query1 whereKey:@"person1" equalTo:currentUser.objectId];
+    PFQuery *query2 = [PFQuery queryWithClassName:@"Conversation"];
+    [query2 whereKey:@"person2" equalTo:currentUser.objectId];
+    PFQuery *orQuery = [PFQuery orQueryWithSubqueries:@[query1,query2]];
+    [orQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (objects.count > 0) {
+            currentConversation = objects[0];
+        }
+        [self loadPFMessages];
+    }];
+}
 
-
+- (void)loadPFMessages {
+    PFQuery *sender = [PFQuery queryWithClassName:@"PFMessage"];
+    [sender whereKey:@"senderID" equalTo:currentUser.objectId];
+    PFQuery *receiver = [PFQuery queryWithClassName:@"PFMessage"];
+    [receiver whereKey:@"receiveID" equalTo:currentUser.objectId];
+    PFQuery *orQuery = [PFQuery orQueryWithSubqueries:@[sender,receiver]];
+    [orQuery orderByDescending:@"createdAt"];
+    [orQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        PFMessages = [[NSMutableArray alloc] initWithArray:objects];
+        [bubbleTable reloadData];
+    }];
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -143,7 +164,8 @@
     [PFmessage saveEventually];
     NSLog(@"SAVED BY CHAT VIEW CONTROLLER: %@", textField.text);
     
-    
+    currentConversation[@"lastMessage"] = textField.text;
+    [currentConversation saveInBackground];
     
     [PubNub sendMessage:@{@"message":textField.text,@"sender":currentUser.objectId} toChannel:targetChannel];
     

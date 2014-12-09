@@ -23,10 +23,10 @@
     PFQuery *query2 = [PFQuery queryWithClassName:@"Conversation"];
     [query2 whereKey:@"person2" equalTo:user.objectId];
     PFQuery *orQuery = [PFQuery orQueryWithSubqueries:@[query1,query2]];
-    NSArray *array = [orQuery findObjects];
-    
-    conversations = [[NSMutableArray alloc] initWithArray:array];
-    
+    [orQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        conversations = [[NSMutableArray alloc] initWithArray:objects];
+        [_tableChats reloadData];
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

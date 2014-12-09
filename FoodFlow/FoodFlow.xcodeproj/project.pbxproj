@@ -837,8 +837,28 @@
 			children = (
 				92BBC8651A3570C700748CDF /* ChatListViewController.h */,
 				92BBC8661A3570C700748CDF /* ChatListViewController.m */,
+				92CC463A1A36B6C300F81290 /* ChatListViewCell.h */,
+				92CC463B1A36B6C300F81290 /* ChatListViewCell.m */,
 			);
 			name = "Chat List";
+			sourceTree = "<group>";
+		};
+		53FB80161A36C94F00AE7119 /* Bubble table */ = {
+			isa = PBXGroup;
+			children = (
+				92BBC8551A356D6B00748CDF /* NSBubbleData.h */,
+				92BBC8561A356D6B00748CDF /* NSBubbleData.m */,
+				92BBC8571A356D6B00748CDF /* UIBubbleHeaderTableViewCell.h */,
+				92BBC8581A356D6B00748CDF /* UIBubbleHeaderTableViewCell.m */,
+				92BBC8591A356D6B00748CDF /* UIBubbleTableView.h */,
+				92BBC85A1A356D6B00748CDF /* UIBubbleTableView.m */,
+				92BBC85B1A356D6B00748CDF /* UIBubbleTableViewCell.h */,
+				92BBC85C1A356D6B00748CDF /* UIBubbleTableViewCell.m */,
+				92BBC85D1A356D6B00748CDF /* UIBubbleTableViewDataSource.h */,
+				92BBC85E1A356D6B00748CDF /* UIBubbleTypingTableViewCell.h */,
+				92BBC85F1A356D6B00748CDF /* UIBubbleTypingTableViewCell.m */,
+			);
+			name = "Bubble table";
 			sourceTree = "<group>";
 		};
 		5B0D2F391A1990C300B85421 /* Seller */ = {
@@ -855,22 +875,10 @@
 		92BBC8411A356BF200748CDF /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				53FB80161A36C94F00AE7119 /* Bubble table */,
 				53FB80151A36BC8D00AE7119 /* Chat List */,
-				92BBC8551A356D6B00748CDF /* NSBubbleData.h */,
-				92BBC8561A356D6B00748CDF /* NSBubbleData.m */,
-				92BBC8571A356D6B00748CDF /* UIBubbleHeaderTableViewCell.h */,
-				92BBC8581A356D6B00748CDF /* UIBubbleHeaderTableViewCell.m */,
-				92BBC8591A356D6B00748CDF /* UIBubbleTableView.h */,
-				92BBC85A1A356D6B00748CDF /* UIBubbleTableView.m */,
-				92BBC85B1A356D6B00748CDF /* UIBubbleTableViewCell.h */,
-				92BBC85C1A356D6B00748CDF /* UIBubbleTableViewCell.m */,
-				92BBC85D1A356D6B00748CDF /* UIBubbleTableViewDataSource.h */,
-				92BBC85E1A356D6B00748CDF /* UIBubbleTypingTableViewCell.h */,
-				92BBC85F1A356D6B00748CDF /* UIBubbleTypingTableViewCell.m */,
 				92BBC8521A356D2000748CDF /* ChatViewController.h */,
 				92BBC8531A356D2000748CDF /* ChatViewController.m */,
-				92CC463A1A36B6C300F81290 /* ChatListViewCell.h */,
-				92CC463B1A36B6C300F81290 /* ChatListViewCell.m */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
