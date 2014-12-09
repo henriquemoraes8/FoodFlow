@@ -134,6 +134,8 @@
             [bubbleData addObject:bubble];
         }
         [bubbleTable reloadData];
+        [bubbleTable layoutIfNeeded];
+        [bubbleTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[bubbleTable numberOfRowsInSection:0]-1 inSection:[bubbleTable numberOfSections]-1] atScrollPosition:UITableViewScrollPositionNone animated:YES];
     }];
 }
 
