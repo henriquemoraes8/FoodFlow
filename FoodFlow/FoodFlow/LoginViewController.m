@@ -163,6 +163,11 @@
                 NSLog(@"User with facebook logged in!");
             }
             [self updateCurrentPFUser:user];
+            PFUser* currentUser = [PFUser currentUser];
+
+            PNChannel* currentChannel = [PNChannel channelWithName:currentUser.objectId];
+            [PubNub subscribeOnChannel:currentChannel];
+            
         }
     }];
 }
