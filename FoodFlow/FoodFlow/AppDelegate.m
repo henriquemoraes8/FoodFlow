@@ -47,10 +47,15 @@
 
 //(In AppDelegate.m, define didReceiveMessage delegate method:)
 - (void)pubnubClient:(PubNub *)client didReceiveMessage:(PNMessage *)message {
-    NSLog(@"Received: %@", message.message);
+    NSLog(@"Received IN APP DELEGATE: %@", message.message);
+    
 }
 
-							
+- (void)pubnubClient:(PubNub *)client didSubscribeOnChannels:(NSArray *)channels {
+    NSLog(@"DELEGATE: Subscribed to channel:%@", channels);
+}
+
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

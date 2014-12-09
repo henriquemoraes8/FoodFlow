@@ -41,11 +41,21 @@
    
 //    UIImage *target_profile = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:destinationUser[@"image"]]]];
     
-    
+   // NSString *convoChannel = [NSString stringWithFormat:@"%@_%@", current_user.objectId, destinationUser.objectId];
     currentChannel = [PNChannel channelWithName:current_user.objectId];
     targetChannel = [PNChannel channelWithName:destinationUser.objectId];
     
     [PubNub subscribeOnChannel:currentChannel];
+    
+    [[PNObservationCenter defaultCenter] addMessageReceiveObserver:self withBlock:^(PNMessage *message) {
+        NSLog(@"OBSERVER: Channel: %@, Message: %@", message.channel.name, message.message);
+        NSBubbleData *replyBubble = [NSBubbleData dataWithText:message.message date:[NSDate dateWithTimeIntervalSinceNow:0] type:BubbleTypeSomeoneElse];
+        replyBubble.avatar = currentProfilePic;
+        
+        [bubbleData addObject:replyBubble];
+        [bubbleTable reloadData];
+
+    }];
     
 
     bubbleData = [[NSMutableArray alloc] initWithObjects:nil];
@@ -115,8 +125,8 @@
 }
 
 //(In AppDelegate.m, define didReceiveMessage delegate method:)
-- (void)pubnubClient:(PubNub *)client didReceiveMessage:(PNMessage *)message {
-    NSLog(@"Received: %@", message.message);
+- (void)pubnubClient:(PubNub *)client displayMessageFrom:(PNMessage *)message {
+    NSLog(@"Received IN CHatviewCONTROLLER: %@", message.message);
     NSBubbleData *sayBubble = [NSBubbleData dataWithText:message.message date:[NSDate dateWithTimeIntervalSinceNow:0] type:BubbleTypeSomeoneElse];
     sayBubble.avatar = currentProfilePic;
     
