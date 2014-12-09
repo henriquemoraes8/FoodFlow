@@ -38,8 +38,8 @@
     [super viewDidLoad];
     
     currentUser = [PFUser currentUser];
-    currentChannel = [PNChannel channelWithName:currentUser.objectId];
-    [PubNub subscribeOnChannel:currentChannel];
+//    currentChannel = [PNChannel channelWithName:currentUser.objectId];
+//    [PubNub subscribeOnChannel:currentChannel];
 
     self.navigationItem.title = [NSString stringWithFormat:@"Chat with %@", destinationUser[@"name"]];
     currentProfilePic = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:currentUser[@"image"]]]];
